@@ -1,0 +1,6 @@
+export default function async blogInstance({params}){
+const slug =  {params.blog}
+const blog = {blog.slug}
+
+return <div>blog</div>
+}

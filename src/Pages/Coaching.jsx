@@ -2,20 +2,50 @@ import React from 'react'
 
 const Coaching = () => {
   return (
-    <div>
-<h2>Personalised Training Plan</h2>
-<p>A training plan bespoke to you. Our Trainerize platform will give you access to your program alongside an extensive exercise library, so you can record every step of your journey.</p>
+    <>
+<div className="p-4 text-s mt-4 flex flex-col items-center justify-center mx-auto sm:w-2/3">
+<div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
+          <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent">More than coaching..</h1>
+        </div>
+  <video autoPlay loop muted className="w-full border-0 rounded-lg shadow-lg shadow-pop-br">
+    <source src="https://file.trainerize.com/assets/tz/home/videos/app-features-v2.mp4" type="video/mp4" /> 
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-<h2>Nutrition Support</h2>
-<p>Food is fuel. My nutritional support is a tailored approach, understanding that to change eating habits is a process that requires time & support. I will help you make better choices, that align with your goals & lifestyle.</p>
+<div className="w-2/3 p-4 text-sm md:text-base mx-auto justify-center text-indigo-400 m-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-<h2>Ongoing Assessments</h2>
-<p>If you don't assess, you guess. We will use a combination of assessment tools including a Movement Screen, Video Analysis & monthly Reviews to ensure that you are getting the best experience possible & moving forward.</p>
+<div className=" p-4 border-0 rounded-lg shadow-lg   bg-indigo-200 flex flex-col items-center justify-center">
+    <i className="fa-solid fa-dumbbell text-3xl mx-auto"></i>
+    <p className="h2 text-lg my-4 text-center">Personalised<br />Training Plan</p>
+    <p className="text-sm text-justify text-indigo-900">A training plan bespoke to you. Our Trainerize platform will give you access to your program alongside an extensive exercise library, so you can record every step of your journey.</p>
+  </div>
 
-<h2>Regular Communication</h2>
-<p>Your success lies in the actions you take outside of your PT sessions. To help you through those times, we strive for regular contact - through unlimited email with 12-hour response time & regular messaging.</p>
+  <div className="p-4 border-0 rounded-lg shadow-lg  bg-indigo-200 flex flex-col items-center justify-center">
+
+    <i className="fa-solid fa-bowl-food text-3xl mx-auto"></i>
+    <p className="h2 text-lg my-4 text-center">Nutrition<br />Support</p>
+    <p className="text-sm text-justify text-indigo-900">Food is fuel. My nutritional support is a tailored approach, understanding that to change eating habits is a process that requires time & support. I will help you make better choices, that align with your goals & lifestyle.</p>
+  </div>
+ 
+  <div className="p-4 border-0 rounded-lg shadow-lg  bg-indigo-200 flex flex-col items-center justify-center">
+
+    <i className="fa-solid fa-ranking-star text-3xl mx-auto"></i>
+    <p className="h2 text-lg my-4 text-center">Ongoing<br />Assessments</p>
+    <p className="text-sm text-justify text-indigo-900">If you don't assess, you guess. We will use a combination of assessment tools including a Movement Screen, Video Analysis & monthly Reviews to ensure that you are getting the best experience possible & moving forward.</p>
+  </div>
+
+  <div className="p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col items-center justify-center ">
+
+    <i className="fa-solid fa-comments text-3xl mx-auto"></i>
+    <p className="h2 text-lg my-4 text-center">Regular<br />Communication</p>
+    <p className="text-sm text-justify text-indigo-900">Your success lies in the actions you take outside of your PT sessions. To help you through those times, we strive for regular contact - through unlimited email with 12-hour response time & regular messaging.</p>
+  </div>
+</div>
 
 </div>
+</>
   )
 }
 
