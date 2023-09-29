@@ -39,7 +39,7 @@ const Home = () => {
     <div className="mx-auto my-10 md:w-3/4">
   <section className="flex text-indigo-900 flex-col sm:flex-row">
   <div className='m-2 sm:w-2/3 md:w-1/2'>
-  <img className="border rounded-lg shadow-lg" src="/public/assets/ash-clancy-online-coach-3.jpg" alt="Ash Clancy" />
+  <img className="border rounded-lg shadow-lg" src="/assets/ash-clancy-online-coach-3.jpg" alt="Ash Clancy" />
 </div>
 
 
