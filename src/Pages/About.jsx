@@ -53,7 +53,7 @@ const About = () => {
     </div>
 </div>
   <div className='m-2 sm:w-2/3 md:w-1/2 bg-cover bg-center'>
-  <img className="border-0 rounded-lg shadow-lg w-full h-3/4 object-cover object-center" src="/src/assets/ash-clancy-online-coach-4.jpg" alt="Ash Clancy" />
+  <img className="border-0 rounded-lg shadow-lg w-full h-3/4 object-cover object-center" src="/public/assets/ash-clancy-online-coach-4.jpg" alt="Ash Clancy" />
 </div>
 </section>
     </div>
@@ -61,7 +61,7 @@ const About = () => {
     <div className="mx-auto mb-10 md:w-3/4">
     <section className="flex text-indigo-900 flex-col sm:flex-row">
   <div className='m-2 bg-cover bg-center sm:w-2/3 md:w-1/2'>
-  <img className="border rounded-lg shadow-lg w-full h-3/4 object-cover object-center" src="/src/assets/ash-clancy-online-coach-6.jpg" alt="Ash Clancy" />
+  <img className="border rounded-lg shadow-lg w-full h-3/4 object-cover object-center" src="/public/assets/ash-clancy-online-coach-6.jpg" alt="Ash Clancy" />
 </div>
       <div className="p-4 text-s -mt-16 sm:-ml-40 sm:mt-0 sm:w-1/2 md:w-2/3">
         <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">

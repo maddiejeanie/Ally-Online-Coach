@@ -39,7 +39,7 @@ const Home = () => {
     <div className="mx-auto my-10 md:w-3/4">
   <section className="flex text-indigo-900 flex-col sm:flex-row">
   <div className='m-2 sm:w-2/3 md:w-1/2'>
-  <img className="border rounded-lg shadow-lg" src="/src/assets/ash-clancy-online-coach-3.jpg" alt="Ash Clancy" />
+  <img className="border rounded-lg shadow-lg" src="/public/assets/ash-clancy-online-coach-3.jpg" alt="Ash Clancy" />
 </div>
 
 
@@ -49,7 +49,11 @@ const Home = () => {
         </div>
         
        <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
-{contentData.title
+{contentData.body.map((block, index) => (
+    <p className="p-2" key={index}>
+      {block.children.map((child) => child.text).join(' ')}
+    </p>
+  ))
 }
 </div>
 
