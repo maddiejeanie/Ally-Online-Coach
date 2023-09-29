@@ -49,11 +49,7 @@ const Home = () => {
         </div>
         
        <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
-{     contentData.body.map((block, index) => (
-    <p className="p-2" key={index}>
-      {block.children.map((child) => child.text).join(' ')}
-    </p>
-  ))
+{contentData.title
 }
 </div>
 
