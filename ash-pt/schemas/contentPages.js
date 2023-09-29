@@ -1,8 +1,4 @@
-import blogPost from "/schemas/blogposts"
-import contentPages from "/schemas/contentPages"
-
-const schemaTypes = [
-  {
+const contentPages = {
     name: 'content',
     type: 'document',
     title: 'Content',
@@ -23,8 +19,6 @@ const schemaTypes = [
         ],
       },
     ],
-  },
+  }
 
-]
-
-export {schemaTypes, blogPost, contentPages}
+  export default contentPages 

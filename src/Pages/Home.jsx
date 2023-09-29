@@ -1,7 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import ContactCTA from '../Components/ContactCTA'
 
 const Home = () => {
+
+    const [contentData, setContentData] = useState([]);
+  
+    useEffect(() => {
+      // Construct the Sanity API URL
+      const PROJECT_ID = 'e8ckavtm'; // Replace with your Sanity project ID
+      const DATASET = 'production'; // Replace with your dataset name
+  
+      const QUERY = '*[title == "Home"]';
+      const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+      
+      // Make the HTTP request
+      fetch(PROJECT_URL)
+        .then((response) => {
+          // Check if the response status is OK (status code 200)
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          // Parse the JSON response
+          return response.json();
+        })
+        .then((data) => {
+
+          // Update the state with the fetched data
+          setContentData(data.result[0]);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error('Error fetching data:', error);
+        });
+    }, []);
+
   return (
     <>
     <div className="mx-auto my-10 md:w-3/4">
@@ -15,30 +47,24 @@ const Home = () => {
         <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
           <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right ">Hi, I'm Ash..</h1>
         </div>
-        <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
-<p className="py-2"><strong>My goal</strong> is to <strong>single-handedly educate you</strong> with the tools and knowledge to be the <strong>strongest and most confident version of yourself; physically and mentally</strong>. This is my <strong>prime focus when coaching you</strong>. From today on, start thinking deeper about your goals. Over the next week or so, we'll get <strong>real specific with your goals</strong>. Together, we will engineer a game plan and work out what we can both do to make your journey to your goal as <strong>fun and achievable as possible</strong>.</p>
+        
+       <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+{     contentData.body.map((block, index) => (
+    <p className="p-2" key={index}>
+      {block.children.map((child) => child.text).join(' ')}
+    </p>
+  ))
+}
+</div>
 
-<p className="py-2">My vision is to have a society of women who are set-free of the <strong>misleading, harmful and infuriating misinformation surrounding fitness and nutrition</strong> floating around our <strong>Instagram/social media feeds</strong>.</p>
-
-<p className="py-2">My vision is to have a society of women who train to feel <strong>strong, empowered, fierce</strong>, and that possess the knowledge of <strong>results-driven training methods</strong>.</p>
-
-<p className="py-2">My vision is to have more women in the world who <strong>unapologetically do it all</strong>, regardless of a social norm.</p>
-
-<p className="py-2">My vision is to have more women utilizing training as an enjoyable and <strong>non-negotiable part of their self-care routine</strong>.</p>
-
-<p className="py-2">My vision is to have more women walking into gyms like they own the place. To have women that genuinely support each other.</p>
-
-<p className="py-2">I want to see more women who are <strong>unapologetically 'do it all'</strong>; the party girl, the mom, the gym rat, the yogi queen, the nerd, the sport fan, the feminine, soft caring person, the direct, assertive person, the wife, the risk-taker, the quiet one, the wife, the Madonna, the social rights activist, the sex worker, the business owner, the whore, the white-collar professional, the whore, <strong>et al.</strong></p>
-
-<p className="py-2">That is my goal. That is my vision for the future. That is the reason I do what I do.</p>
-
-<p className="py-2">Dream big and do bigger.</p>
-      </div>
     </div>
+    
     </section>
+    
     </div>
     </>
   )
 }
+
 
 export default Home

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '@sanity/client'
+import { Link } from "react-router-dom";
 
  const client = sanityClient({
   projectId: 'e8ckavtm',
@@ -63,7 +64,7 @@ const Blog = () => {
     const truncatedText = words.slice(0, maxWords).join(' ');
   
     // Add ellipsis if there are more words
-    const ellipsis = words.length > maxWords ? '...' : '';
+    const ellipsis = words.length > maxWords ? '..' : '';
   
     return <div>{truncatedText + ellipsis}</div>;
   }
@@ -93,11 +94,14 @@ const Blog = () => {
                 className='rounded-md border-0 m-4 h-40 object-cover'
                 alt='Your image alt text'
               />
-              <h2 className="p-2 text-center h1 text-lg">{blogPost.title}</h2>
+              <h2 className="p-2 hh1 text-lg">{blogPost.title}</h2>
               <div>
               {renderBodyContent(blogPost.body)}
             </div>
-              <button className="text-white h1 px-2 mt-4 hover:bg-indigo-400 transition delay-200 border-2 rounded-md text-lg uppercase font-bold">Read More</button>
+            <div className="flex justify-center">
+            <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
+                <button className="text-white h1 px-2 mt-4 hover:bg-indigo-400 transition delay-200 border-2 rounded-md text-lg uppercase font-bold">Read More</button></Link>
+                </div>
 
             </div>
           ))}

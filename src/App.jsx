@@ -10,34 +10,25 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Coaching from "./Pages/Coaching";
 import Blog from "./Pages/Blog"
+import IndvBlogPost from './Pages/indvBlogPost.jsx';
 
 import RootLayout from "./Components/RootLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-    </Route>
 
-    <Route path="/about" element={<RootLayout />}>
-      <Route index element={<About />} />
-    </Route>
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="coaching" element={<Coaching />} />
 
-    <Route path="/contact" element={<RootLayout />}>
-      <Route index element={<Contact />} />
+      <Route path="blog" element={<Blog />} />
+      <Route path="blog/:slug" element={<IndvBlogPost/>} />
     </Route>
-
-    <Route path="/coaching" element={<RootLayout />}>
-      <Route index element={<Coaching />} />
-    </Route>
-
-    <Route path="/blog" element={<RootLayout />}>
-      <Route index element={<Blog />} />
-    </Route>
-    </>
   )
 );
+
 
 
 function App() {
