@@ -1,5 +1,6 @@
 import blogPost from "/schemas/blogposts"
 import contentPages from "/schemas/contentPages"
+import testimonials from "./schemas/testimonials"
 
 const schemaTypes = [
   {
@@ -27,4 +28,4 @@ const schemaTypes = [
 
 ]
 
-export {schemaTypes, blogPost, contentPages}
+export {schemaTypes, blogPost, contentPages, testimonials}
