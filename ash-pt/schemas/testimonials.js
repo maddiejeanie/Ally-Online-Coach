@@ -32,6 +32,20 @@ const testimonials = {
         },
       },
     ],
-      };
+    preview: {
+      select: {
+        name: 'name',
+        yearsTraining: 'yearsTraining',
+        media: 'photo',
+      },
+      prepare({ name, yearsTraining, media }) {
+        return {
+          title: name,
+          subtitle: `${yearsTraining} years of training`,
+          media,
+        };
+      },
+    },
+  };
   
   export default testimonials

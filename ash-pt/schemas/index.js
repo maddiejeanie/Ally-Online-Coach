@@ -1,6 +1,6 @@
 import blogPost from "/schemas/blogposts"
 import contentPages from "/schemas/contentPages"
-import testimonials from "./schemas/testimonials"
+import testimonials from "/schemas/testimonials"
 
 const schemaTypes = [
   {
