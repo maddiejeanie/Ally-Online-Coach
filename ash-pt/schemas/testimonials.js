@@ -1,4 +1,4 @@
-// schemas/testimonial.js
+
 const testimonials = {
     name: 'testimonial',
     title: 'Testimonial',
