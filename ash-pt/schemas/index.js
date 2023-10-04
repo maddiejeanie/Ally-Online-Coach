@@ -1,4 +1,5 @@
 import blogPost from "/schemas/blogposts"
+import blogPost2 from "/schemas/blogposts2"
 import contentPages from "/schemas/contentPages"
 import testimonials from "/schemas/testimonials"
 
@@ -28,4 +29,4 @@ const schemaTypes = [
 
 ]
 
-export {schemaTypes, blogPost, contentPages, testimonials}
+export {schemaTypes, blogPost, blogPost2, contentPages, testimonials}
