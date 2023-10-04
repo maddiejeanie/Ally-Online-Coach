@@ -26,10 +26,10 @@ const NavMenu = () => {
 
   return (
     <>
-  <div className="flex flex-basis-1 flex-row items-center bg-indigo-200 w-full p-2">
+  <div className="flex flex-basis-1 flex-row items-center bg-indigo-300 p-2">
 
-  <div className="h1 flex items-center justify-center w-14 h-12 border-0 rounded-full bg-indigo-500 text-white text-xl px-4">
-    AC
+  <div className="h1 flex items-center justify-center w-14 h-14 border-0 rounded-full bg-indigo-500 text-white text-xl px-4">
+  <i class="fa-solid fa-dumbbell"></i>
   </div>
 
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TestimonialsSection from '../Components/TestimonialsSection';
 
 const Home = () => {
 
@@ -61,10 +62,12 @@ const Home = () => {
 </div>
 
     </div>
-    
+
     </section>
-    
+        
+
     </div>
+    <TestimonialsSection />
     </>
   )
 }

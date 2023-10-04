@@ -73,7 +73,7 @@ const IndvBlogPost = () => {
           className="rounded-md border-0 m-4 w-full h-64 mx-auto object-cover"
           alt="{matchingPost.title}"
         />
-<div>
+<div className="text-indigo-900">
   {matchingPost.body.map((block) => (
     <p className="p-2">
       {block.children.map((child) => child.text).join(' ')}
@@ -105,15 +105,18 @@ const IndvBlogPost = () => {
             <p>{blogPost.date}</p>
           </div>
         </div>
+        
         <img
           src={urlFor(blogPost.featuredImage)}
           className='rounded-md border-0 m-4 h-40 object-cover'
           alt='Your image alt text'
         />
+        <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
         <h2 className="p-2 h1 text-lg">{blogPost.title}</h2>
-        <div>
+        <div className="text-indigo-900">
           {renderBodyContent(blogPost.body)}
         </div>
+        </Link>
         <div className="flex justify-center">
 
         <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>

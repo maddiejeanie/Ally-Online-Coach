@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="flex flex-row items-center bg-indigo-200 p-4 justify-between content-center">
+    <div className="flex flex-row items-center bg-indigo-300 p-4 justify-between content-center">
         <nav className="w-1/2 items-center justify-start w-5/8 h1 text-2xl uppercase font-bold text-white flex">
        <p>ASHLEY CLANCY ONLINE COACH</p>
        </nav>
@@ -18,6 +18,8 @@ const Footer = () => {
       </div>
     </div>
     </div>
+
+
   ) 
 }
 

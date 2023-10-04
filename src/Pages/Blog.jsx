@@ -94,8 +94,8 @@ const Blog = () => {
                 className='rounded-md border-0 m-4 h-40 object-cover'
                 alt='Your image alt text'
               />
-              <h2 className="p-2 hh1 text-lg">{blogPost.title}</h2>
-              <div>
+              <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}><h2 className="p-2 h1 text-lg">{blogPost.title}</h2></Link>
+              <div className="text-indigo-900">
               {renderBodyContent(blogPost.body)}
             </div>
             <div className="flex justify-center">

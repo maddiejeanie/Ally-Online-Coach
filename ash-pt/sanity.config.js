@@ -1,7 +1,7 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
-import {schemaTypes, blogPost} from './schemas'
+import {schemaTypes} from './schemas'
 
 
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: [...schemaTypes, blogPost],
+    types: [...schemaTypes],
   },
 })
 
