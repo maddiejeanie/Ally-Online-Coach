@@ -1,6 +1,6 @@
-import blogPost from "./schemas/blogPost";
-import contentPages from "./schemas/contentPages";
-import testimonials from "./schemas/testimonials";
+import blogPost from "./blogPost";
+import contentPages from "./contentPages";
+import testimonials from "./testimonials";
 
 const schemaTypes = [blogPost, contentPages, testimonials];
 
