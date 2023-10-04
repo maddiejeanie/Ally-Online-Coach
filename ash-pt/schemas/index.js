@@ -1,31 +1,7 @@
-import blogPost from "/schemas/blogposts"
-import contentPages from "/schemas/contentPages"
-import testimonials from "/schemas/testimonials"
+import blogPost from "./schemas/blogPost";
+import contentPages from "./schemas/contentPages";
+import testimonials from "./schemas/testimonials";
 
-const schemaTypes = [
-  {
-    name: 'content',
-    type: 'document',
-    title: 'Content',
-    fields: [
-      {
-        name: 'title',
-        type: 'string',
-        title: 'Title',
-      },
-      {
-        name: 'body',
-        type: 'array',
-        title: 'Body',
-        of: [
-          {
-            type: 'block',
-          },
-        ],
-      },
-    ],
-  },
+const schemaTypes = [blogPost, contentPages, testimonials];
 
-]
-
-export {schemaTypes, blogPost, contentPages, testimonials,}
+export { schemaTypes };
