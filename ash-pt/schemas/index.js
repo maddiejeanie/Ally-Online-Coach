@@ -28,4 +28,4 @@ const schemaTypes = [
 
 ]
 
-export {schemaTypes, blogPost, contentPages, testimonials}
+export {schemaTypes, blogPost, contentPages, testimonials,}
