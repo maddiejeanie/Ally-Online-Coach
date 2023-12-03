@@ -13,6 +13,7 @@ import Blog from "./Pages/Blog"
 import IndvBlogPost from './Pages/indvBlogPost.jsx';
 
 import RootLayout from "./Components/RootLayout";
+import ClientCheckin from "./Pages/ClientCheckin";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="coaching" element={<Coaching />} />
-
+      <Route path="clients" element={<ClientCheckin />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost/>} />
     </Route>

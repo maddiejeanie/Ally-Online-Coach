@@ -59,7 +59,7 @@ const IndvBlogPost = () => {
       </div>
       <div className="my-8 p-4 border-0 rounded-lg shadow-lg bg-indigo-200">
         <div className="flex justify-between items-center gap-4">
-          <div className="text-white h1 px-2 py-1 bg-indigo-400 border-2 rounded-md uppercase">
+          <div className="text-white h1 px-2 py-1 bg-indigo-400 border-0 rounded-md uppercase">
             <p>
               <i className="fa-solid fa-tag"></i> {matchingPost.categories}
             </p>
@@ -98,7 +98,7 @@ const IndvBlogPost = () => {
         className="p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col justify-between"
       >
         <div className='flex justify-between items-center gap-4'>
-          <div className="text-white h1 px-2 py-1 bg-indigo-400 border-2 rounded-md uppercase">
+          <div className="text-white h1 px-2 py-1 bg-indigo-400 border-0 rounded-md uppercase">
             <p><i className="fa-solid fa-tag"></i> {blogPost.categories}</p>
           </div>
           <div className="font-bold text-indigo-500">
@@ -120,8 +120,8 @@ const IndvBlogPost = () => {
         <div className="flex justify-center">
 
         <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
-          <button className="text-white h1 px-2 mt-4 hover:bg-indigo-400 transition delay-200 border-2 rounded-md text-lg uppercase font-bold">Read More</button>
-        </Link>
+        <button className="text-white bg-indigo-400 h1 px-2 mt-4 hover:bg-white hover:text-indigo-400 transition delay-200 border-2 border-indigo-400 rounded-md text-lg uppercase font-bold">Read More</button></Link>
+
         </div>
       </div>
     ))}

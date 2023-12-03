@@ -1,12 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import ContactCTA from "./ContactCTA";
+import Navbar from "../Components/WebsiteComponents/Navbar";
+import ContactCTA from "../Components/WebsiteComponents/ContactCTA";
+import Footer from "../Components/WebsiteComponents/Footer";
 
 const RootLayout = () => {
     const location = useLocation();
 
-    const isContactPage = location.pathname.startsWith("/contact");
+    const NoContactCTAPage = location.pathname.startsWith("/contact") || location.pathname.startsWith("/clients");
 
     return (
         <div>
@@ -16,7 +16,7 @@ const RootLayout = () => {
                 <Outlet />
             </main>
 
-            {!isContactPage && <ContactCTA />}
+            {!NoContactCTAPage && <ContactCTA />}
 
             <Footer />
         </div>

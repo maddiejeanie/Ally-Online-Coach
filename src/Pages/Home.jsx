@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TestimonialsSection from '../Components/TestimonialsSection';
+import TestimonialsSection from '../Components/WebsiteComponents/TestimonialsSection';
 
 const Home = () => {
 

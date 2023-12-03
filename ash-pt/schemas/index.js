@@ -1,4 +1,4 @@
-import blogPost from "./blogPost";
+import blogPost from "./blogposts";
 import contentPages from "./contentPages";
 import testimonials from "./testimonials";
 

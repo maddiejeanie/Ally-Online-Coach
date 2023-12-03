@@ -13,12 +13,12 @@ const toggleHamNav = () => {
 const NavMenu = () => {
   return (
     <div className="h1 text-2xl uppercase font-bold text-white w-full md:flex md:flex-row items-center justify-center align-center">
-    <div className='bg-indigo-300 w-full md:bg-inherit'><Link to="/" className="px-2 hover:text-indigo-500 transition delay-200">Home</Link></div>
-    <div className='bg-indigo-400 w-full  md:bg-inherit'><Link to="/about" className="px-2 hover:text-indigo-500 transition delay-200">About</Link></div>
-    <div className='bg-indigo-500 w-full  md:bg-inherit'><Link to="/coaching" className="px-2 hover:text-indigo-400 transition delay-200">Coaching</Link></div>
-    <div className='bg-indigo-600 w-full  md:bg-inherit'><Link to="/blog" className="px-2 hover:text-indigo-400 transition delay-200">Blog</Link></div>
-    <div className='bg-indigo-700 w-full  md:bg-inherit'><i href="http://instagram.com/bbyc.xo" className="px-2 hover:text-indigo-500 transition delay-200 fa-brands fa-instagram"></i></div>
-    <div className='bg-indigo-800 w-full  md:bg-inherit'><i className="px-2 hover:text-indigo-500 transition delay-200 fa-brands fa-whatsapp"></i></div>
+    <div className='bg-indigo-300  md:bg-inherit'><Link to="/" className="px-2 hover:text-indigo-500 transition delay-200">Home</Link></div>
+    <div className='bg-indigo-400  md:bg-inherit'><Link to="/about" className="px-2 hover:text-indigo-500 transition delay-200">About</Link></div>
+    <div className='bg-indigo-500  md:bg-inherit'><Link to="/coaching" className="px-2 hover:text-indigo-400 transition delay-200">Coaching</Link></div>
+    <div className='bg-indigo-600  md:bg-inherit'><Link to="/clients" className="px-2 hover:text-indigo-400 transition delay-200">Client Checkin APp</Link></div>
+    <div className='bg-indigo-700  md:bg-inherit'><Link to="/blog" className="px-2 hover:text-indigo-400 transition delay-200">Blog</Link></div>
+    <div className='bg-indigo-800  md:bg-inherit'><i href="http://instagram.com/bbyc.xo" className="px-2 hover:text-indigo-500 transition delay-200 fa-brands fa-instagram"></i></div>
     </div>
   )
 }
@@ -29,7 +29,7 @@ const NavMenu = () => {
   <div className="flex flex-basis-1 flex-row items-center bg-indigo-300 p-2">
 
   <div className="h1 flex items-center justify-center w-14 h-14 border-0 rounded-full bg-indigo-500 text-white text-xl px-4">
-  <i class="fa-solid fa-dumbbell"></i>
+  <i className="fa-solid fa-dumbbell"></i>
   </div>
 
 
