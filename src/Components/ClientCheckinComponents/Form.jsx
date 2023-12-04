@@ -110,7 +110,7 @@ const Form = () => {
   
   const generateGridItem = (children) => (
     <Grid item xs={12}>
-      <Paper elevation={4} style={{ padding: "20px" }}>
+      <Paper elevation={4} style={{ padding: "20px", backgroundColor: "#f7fafc" }}>
         {children}
       </Paper>
     </Grid>
@@ -129,10 +129,10 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Body weight this morning (weighed upon waking, before
                     eating)?
-                  </h3>
+                  </p>
                   <OutlinedInput
                     type="number"
                     endAdornment={
@@ -152,10 +152,10 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Rate your sleep quality for the week (1 being lowest, 10
                     being highest)?
-                  </h3>
+                  </p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -175,9 +175,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Average hours of sleep per night?
-                  </h3>
+                  </p>
                   <OutlinedInput
                     type="number"
                     min={1}
@@ -196,9 +196,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Reasons for poor sleep, if applicable?
-                  </h3>
+                  </p>
                   <Grid container spacing={1}>
                     {sleepFactors.map((factor, index) => (
                       <Grid item xs={6} key={index}>
@@ -228,9 +228,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     How would you rate your stress levels for the week?
-                  </h3>
+                  </p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -249,9 +249,9 @@ const Form = () => {
               )}
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Reasons for increased stress, if applicable?
-                  </h3>
+                  </p>
                   <Grid container spacing={1}>
                     {stressFactors.map((factor, index) => (
                       <Grid item xs={6} key={index}>
@@ -277,9 +277,9 @@ const Form = () => {
               )}
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     How would you rate your energy levels for the week?
-                  </h3>
+                  </p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -299,9 +299,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Reasons for low levels of energy, if applicable?
-                  </h3>
+                  </p>
                   <Grid container spacing={1}>
                     {lowEnergyFactors.map((factor, index) => (
                       <Grid item xs={6} key={index}>
@@ -332,9 +332,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Challenges in Nutrition Plan:
-                  </h3>
+                  </p>
                   <Grid container spacing={1}>
                     {nutritionChallenges.map((factor, index) => (
                       <Grid item xs={6} key={index}>
@@ -361,9 +361,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Rate Nutrition Plan Compliance?
-                  </h3>
+                  </p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -383,16 +383,16 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Training sessions complete?
-                  </h3>
+                  </p>
                   <FormControlLabel control={<Switch />} />
                 </>
               )}
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Training Intensity:</h3>
+                  <p className="text-md pb-4">Training Intensity:</p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -412,7 +412,7 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Daily Step Target?</h3>
+                  <p className="text-md pb-4">Daily Step Target?</p>
                   <OutlinedInput
                     type="number"
                     inputProps={{
@@ -433,7 +433,7 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Training Progressions?</h3>
+                  <p className="text-md pb-4">Training Progressions?</p>
                   <TextField
                     multiline
                     rows={3}
@@ -450,7 +450,7 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Training Plan Compliance?</h3>
+                  <p className="text-md pb-4">Training Plan Compliance?</p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -474,14 +474,14 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Social Interaction?</h3>
+                  <p className="text-md pb-4">Social Interaction?</p>
                   <Switch color="primary" />
                 </>
               )}
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Gratitude List:</h3>
+                  <p className="text-md pb-4">Gratitude List:</p>
                   <TextField
                     multiline
                     rows={3}
@@ -497,7 +497,7 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Overall Week Rating?</h3>
+                  <p className="text-md pb-4">Overall Week Rating?</p>
                   <Slider
                     style={{ margin: "40px 0 0 0" }}
                     defaultValue={5}
@@ -517,7 +517,7 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">Weekly Goals:</h3>
+                  <p className="text-md pb-4">Weekly Goals:</p>
                   <TextField
                     multiline
                     rows={3}
@@ -534,9 +534,9 @@ const Form = () => {
 
               {generateGridItem(
                 <>
-                  <h3 className="h3 text-xl pb-4">
+                  <p className="text-md pb-4">
                     Additional Comments/Help Needed:
-                  </h3>
+                  </p>
                   <TextField
                     multiline
                     rows={3}
@@ -572,7 +572,7 @@ const Form = () => {
     e.target.style.backgroundColor = "rgb(79, 70, 229)"; // Indigo-500
   }}
 >
-  Submit your weekly check-inh
+  Submit your check-in
 </Button>
 
             </Grid>

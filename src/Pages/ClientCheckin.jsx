@@ -1,9 +1,14 @@
+import { useState } from "react";
 
 import Form from "../Components/ClientCheckinComponents/Form";
 import Login from "../Components/ClientCheckinComponents/Login";
+import LoggedInView from "../Components/ClientCheckinComponents/LoggedInView";
+
 
 
 const ClientCheckin = () => {
+  const [loggedIn, setLoggedIn] = useState(true);
+
   return (
     <>
       <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
@@ -13,8 +18,10 @@ const ClientCheckin = () => {
           </h1>
         </div>
         <Login/>
-        <Form />
+        {loggedIn ? <LoggedInView/>: null}
+        <Form/>
         </div>
+       
         </>
   );
 };

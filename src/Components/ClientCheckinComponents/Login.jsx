@@ -25,13 +25,13 @@ const LoginForm = () => {
 
         
       <form
-        className="bg-white p-8 rounded-lg shadow-lg"
+        className="bg-gray-100 p-8 rounded-lg shadow-2xl w-2/3"
         onSubmit={handleSubmit}
       >
     <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
-      <div className="h-14 w-14 border-0 rounded-full bg-indigo-500 text-white text-xl flex items-center justify-center">
-            <i className="fa-solid fa-dumbbell"></i>
-          </div>
+    <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-indigo-500 text-white text-xl">
+    <i className="fa-solid fa-dumbbell"></i>
+  </div>
           <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">          Login
         </h2>
         </div>
