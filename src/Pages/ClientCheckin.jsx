@@ -5,9 +5,25 @@ import Login from "../Components/ClientCheckinComponents/Login";
 import LoggedInView from "../Components/ClientCheckinComponents/LoggedInView";
 
 
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAD7293mPnxKFAaxzw5SgbrZGUDwWQw3wU",
+  authDomain: "pt-clients-checkin.firebaseapp.com",
+  databaseURL: "https://pt-clients-checkin-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "pt-clients-checkin",
+  storageBucket: "pt-clients-checkin.appspot.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+
 
 const ClientCheckin = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <>
@@ -17,9 +33,9 @@ const ClientCheckin = () => {
             Client Check-In
           </h1>
         </div>
-        <Login/>
-        {loggedIn ? <LoggedInView/>: null}
-        <Form/>
+        <Login />
+        {/* {loggedIn ? <LoggedInView/>: null}
+        <Form/> */}
         </div>
        
         </>
