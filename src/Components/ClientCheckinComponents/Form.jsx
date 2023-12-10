@@ -117,6 +117,8 @@ const Form = () => {
   );
 
   return (
+    <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
+
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
@@ -590,6 +592,7 @@ const Form = () => {
           )}
 
     </ThemeProvider>
+    </div>
   );
 };
 
