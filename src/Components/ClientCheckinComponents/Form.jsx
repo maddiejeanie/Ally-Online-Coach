@@ -22,6 +22,10 @@ import {
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import { useAuth } from "./AuthContext.jsx"
+import { getDatabase, ref, push } from "firebase/database";
+import { useNavigate } from 'react-router-dom'
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -45,7 +49,10 @@ const theme = createTheme({
 });
 
 const Form = () => {
+  
   const [formData, setFormData] = useState({
+    userId: null,
+    userEmail: null,
     CheckinWeight: 0,
     SleepQualityRating: 5,
     HoursOfSleep: 0,
@@ -69,6 +76,8 @@ const Form = () => {
   });
   const [submissionTime, setSubmissionTime] = useState(null);
   const [formVisible, setFormVisible] = useState(true);
+  const { user } = useAuth();
+  const database = getDatabase();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,7 +89,14 @@ const Form = () => {
       submissionTime: currentTime,
     }));
 
-    console.log(formData);
+    formData.userId = user.uid;
+    formData.email = user.email;
+    // Get a reference to the "forms" node in your database
+    const formsRef = ref(database, "forms");
+
+    // Push the form data to the database
+    push(formsRef, formData)
+
     setFormVisible(false);
   };
 
@@ -105,8 +121,11 @@ const Form = () => {
       }
     });
   };
-  
+  const navigate = useNavigate();
 
+const backToDashboard = () => {
+ navigate('/client/dashboard')
+}
   
   const generateGridItem = (children) => (
     <Grid item xs={12}>
@@ -376,8 +395,8 @@ const Form = () => {
                     min={1}
                     max={10}
                     /* required */
-                    name="NutritionComplicance"
-                    value={formData.NutritionComplicance}
+                    name="NutritionCompliance"
+                    value={formData.NutritionCompliance}
                     onChange={handleInputChange}
                   />
                 </>
@@ -584,10 +603,18 @@ const Form = () => {
         {submissionTime &&
           generateGridItem(
             <>
-              <p className="text-center">
-                <strong>Form submitted at:</strong>{" "}
+              <div className="text-s flex flex-col items-center justify-center my-4 mx-4">
+                <strong>Form submitted at:</strong><br/>
                 {submissionTime.toLocaleString()}
-              </p>
+              </div>
+
+              <button
+  type="button"
+  onClick={backToDashboard}
+  className="w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+>
+                Back to the Dashboard
+            </button>
             </>
           )}
 
