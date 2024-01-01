@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const auth = getAuth();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const provider = new GoogleAuthProvider();
 
   const [loginData, setLoginData] = useState({
     email: "",
@@ -44,7 +45,23 @@ const LoginForm = () => {
     } catch (error) {
       setError(error.message);
     }
-  };
+  }
+    
+    function handleGoogleSignin() {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setError(error.message)
+    const credential = GoogleAuthProvider.credentialFromError(error);
+  });
+    }
+    
 
   function resetForm() {
     setLoginData({
@@ -108,9 +125,17 @@ const LoginForm = () => {
       <button
         type="button"
         onClick={handleCreate}
-        className="w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+        className="my-2 w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
       >
         Create Account
+      </button>
+
+      <button
+        type="button"
+        onClick={handleGoogleSignin}
+        className="my-2 w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+      >
+        Create/Sign in via Google <i className="px-1 fa-brands fa-google"></i>
       </button>
 
       {error && <p className="text-red-500">{error}</p>}
@@ -119,4 +144,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginForm

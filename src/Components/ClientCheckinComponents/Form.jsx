@@ -574,6 +574,7 @@ const backToDashboard = () => {
 <Button
   type="submit"
   style={{
+    marginTop: "1rem",
     width: "100%",
     padding: "0.5rem 1rem",
     fontSize: "1rem",
