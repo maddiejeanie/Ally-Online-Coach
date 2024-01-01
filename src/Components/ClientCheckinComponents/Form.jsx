@@ -124,7 +124,7 @@ const Form = () => {
   const navigate = useNavigate();
 
 const backToDashboard = () => {
- navigate('/client/dashboard')
+ navigate('/clients/dashboard')
 }
   
   const generateGridItem = (children) => (
