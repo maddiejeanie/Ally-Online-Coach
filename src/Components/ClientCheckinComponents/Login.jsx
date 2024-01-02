@@ -8,8 +8,8 @@ const LoginForm = () => {
   const provider = new GoogleAuthProvider();
 
   const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
+    email: "test@test.com",
+    password: "test123",
   });
 
   const handleInputChange = (e) => {

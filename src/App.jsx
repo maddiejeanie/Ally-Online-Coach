@@ -17,6 +17,7 @@ import Form from "./Components/ClientCheckinComponents/Form.jsx";
 import RootLayout from "./Components/RootLayout";
 import ClientCheckin from "./Pages/ClientCheckin";
 import Dashboard from "./Components/ClientCheckinComponents/Dashboard.jsx";
+import Posts from "./Components/ClientCheckinComponents/Posts.jsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="clients" element={<ClientCheckin />} />
       <Route path="clients/dashboard" element={<Dashboard />} />
       <Route path="clients/entry/new" element={<Form />} />
+      <Route path="clients/posts" element={<Posts />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost />} />
     </Route>

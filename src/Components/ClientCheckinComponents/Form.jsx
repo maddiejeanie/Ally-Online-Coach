@@ -23,7 +23,7 @@ import {
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import { useAuth } from "./AuthContext.jsx"
-import { getDatabase, ref, push } from "firebase/database";
+import { getDatabase, ref, push, serverTimestamp} from "firebase/database";
 import { useNavigate } from 'react-router-dom'
 
 const theme = createTheme({
@@ -52,7 +52,6 @@ const Form = () => {
   
   const [formData, setFormData] = useState({
     userId: null,
-    userEmail: null,
     CheckinWeight: 0,
     SleepQualityRating: 5,
     HoursOfSleep: 0,
@@ -74,23 +73,22 @@ const Form = () => {
     CommentsorHelp: "",
     submissionTime: null,
   });
-  const [submissionTime, setSubmissionTime] = useState(null);
   const [formVisible, setFormVisible] = useState(true);
+  const [successMessage, setSuccessMessage] = useState(false);
   const { user } = useAuth();
   const database = getDatabase();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const currentTime = new Date();
-    setSubmissionTime(currentTime);
+
+    formData.userId = user.uid;
 
     setFormData((prevData) => ({
       ...prevData,
-      submissionTime: currentTime,
+      submissionTime: serverTimestamp(),
+      userId: user.uid,
     }));
 
-    formData.userId = user.uid;
-    formData.email = user.email;
     // Get a reference to the "forms" node in your database
     const formsRef = ref(database, "forms");
 
@@ -98,6 +96,7 @@ const Form = () => {
     push(formsRef, formData)
 
     setFormVisible(false);
+    setSuccessMessage(true)
   };
 
   
@@ -601,12 +600,10 @@ const backToDashboard = () => {
           </form>
         )}
 
-        {submissionTime &&
-          generateGridItem(
+        {successMessage && generateGridItem(
             <>
               <div className="text-s flex flex-col items-center justify-center my-4 mx-4">
-                <strong>Form submitted at:</strong><br/>
-                {submissionTime.toLocaleString()}
+                <strong>Form submitted!</strong>
               </div>
 
               <button
