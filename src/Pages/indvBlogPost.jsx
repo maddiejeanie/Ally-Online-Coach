@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url';
-import sanityClient from '@sanity/client';
+import {createClient} from '@sanity/client';
 import { useParams, useLocation } from 'react-router-dom'; // Import useParams to get the slug from the URL
 import { Link } from "react-router-dom";
 
 
-const builder = imageUrlBuilder(sanityClient({
+const builder = imageUrlBuilder(createClient({
   projectId: 'e8ckavtm',
   dataset: 'production',
   apiVersion: '2021-08-31',

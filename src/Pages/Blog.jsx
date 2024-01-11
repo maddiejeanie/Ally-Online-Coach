@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
-import sanityClient from '@sanity/client'
+import {createClient} from '@sanity/client'
 import { Link } from "react-router-dom";
 
- const client = sanityClient({
+ const client = createClient({
   projectId: 'e8ckavtm',
   dataset: 'production',
   apiVersion: '2021-08-31',
