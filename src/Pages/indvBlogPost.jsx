@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 const builder = imageUrlBuilder(sanityClient({
   projectId: 'e8ckavtm',
   dataset: 'production',
+  apiVersion: '2021-08-31',
   useCdn: true, // set to `false` to bypass the edge cache
 }));
 
@@ -74,12 +75,15 @@ const IndvBlogPost = () => {
           alt="{matchingPost.title}"
         />
 <div className="text-indigo-900">
-  {matchingPost.body.map((block) => (
-    <p className="p-2">
-      {block.children.map((child) => child.text).join(' ')}
+  {matchingPost.body.map((block, index) => (
+    <p key={index} className="p-2">
+      {block.children.map((child, childIndex) => (
+        <span key={childIndex}>{child.text}</span>
+      ))}
     </p>
   ))}
 </div>
+
       </div>
  
       <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">

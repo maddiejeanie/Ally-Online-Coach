@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
  const client = sanityClient({
   projectId: 'e8ckavtm',
   dataset: 'production',
+  apiVersion: '2021-08-31',
    useCdn: true, // set to `false` to bypass the edge cache
 
 })
@@ -39,9 +40,6 @@ const Blog = () => {
         return response.json();
       })
       .then((data) => {
-        // Handle the fetched data here
-        console.log('Fetched data:', data);
-        // Update the state with the fetched data
         setBlogData(data.result);
       })
       .catch((error) => {
@@ -83,7 +81,7 @@ const Blog = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogData.map((blogPost) => (
             <div
-              key={blogPost._id}
+        key={blogPost._id}
               className="p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col justify-between">
               
               <div className='flex justify-between items-center gap-4'>
