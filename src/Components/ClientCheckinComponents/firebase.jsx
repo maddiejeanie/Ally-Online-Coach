@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app"
+import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "pt-clients-checkin.appspot.com",
   messagingSenderId: "284874971153",
   appId: "1:284874971153:web:f0476dfaf4b6cd4d79f9b0"
-}
+};
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);

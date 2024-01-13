@@ -13,7 +13,7 @@ const Dashboard = () => {
         } 
 
     const handleCreateCheckin = () => {
-        navigate('/clients/entry/new')
+        navigate('/clients/posts/new')
     }
     
     return (

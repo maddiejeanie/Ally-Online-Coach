@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       <Route path="coaching" element={<Coaching />} />
       <Route path="clients" element={<ClientCheckin />} />
       <Route path="clients/dashboard" element={<Dashboard />} />
-      <Route path="clients/entry/new" element={<Form />} />
+      <Route path="clients/posts/new" element={<Form />} />
       <Route path="clients/posts" element={<Posts />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost />} />

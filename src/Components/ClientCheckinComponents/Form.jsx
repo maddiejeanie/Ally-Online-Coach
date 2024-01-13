@@ -80,24 +80,24 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    formData.userId = user.uid;
-
-    setFormData((prevData) => ({
-      ...prevData,
-      submissionTime: serverTimestamp(),
+  
+    // Set the submissionTime directly when constructing formData
+    const formDataWithTimestamp = {
+      ...formData,
       userId: user.uid,
-    }));
-
+      submissionTime: serverTimestamp(),
+    };
+  
     // Get a reference to the "forms" node in your database
     const formsRef = ref(database, "forms");
-
+  
     // Push the form data to the database
-    push(formsRef, formData)
-
+    push(formsRef, formDataWithTimestamp);
+  
     setFormVisible(false);
-    setSuccessMessage(true)
+    setSuccessMessage(true);
   };
+  
 
   
   const handleInputChange = (e, category) => {

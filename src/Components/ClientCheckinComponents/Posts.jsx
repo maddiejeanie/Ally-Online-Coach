@@ -1,56 +1,80 @@
-import { ref, onValue } from 'firebase/database';
-import { database } from '../ClientCheckinComponents/firebase';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
+import { app } from '../ClientCheckinComponents/firebase';
+import PostDataDisplay from './PostDataDisplay';
+
+const database = getDatabase(app);
+const auth = getAuth(app);
 
 const Posts = () => {
-  const [usersPosts, setUsersPosts] = useState([]);
+  const [postDataList, setPostDataList] = useState([]);
+  const [error, setError] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
-    const fetchData = () => {
-      const formsRef = ref(database, 'forms');
-  
-      // Set up a real-time listener
-      const unsubscribe = onValue(formsRef, (snapshot) => {
-        try {
-          const data = snapshot.val();
-          if (data) {
-            const usersPostsData = Object.values(data);
-            console.log('Users posts data:', usersPostsData);
-            setUsersPosts(usersPostsData);
-          } else {
-            console.log('No data available');
-          }
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      });
-      
+    const postsRef = ref(database, 'forms');
 
-      // Optionally, you can clean up the listener when the component unmounts
-      return () => {
-        console.log('Unsubscribing from real-time listener');
-        unsubscribe();
-      };
+    const fetchData = (snapshot) => {
+      try {
+        const data = snapshot.val();
+        console.log('Fetched data:', data);
+
+        if (data) {
+          const formIds = Object.keys(data);
+          const forms = formIds.map((formId) => ({
+            id: formId,
+            ...data[formId],
+          }));
+
+          setPostDataList(forms);
+          
+          // Log the current user's ID once when the component mounts
+          const currentUser = auth.currentUser;
+          if (currentUser) {
+            const currentUserId = currentUser.uid;
+            console.log('Current User ID:', currentUserId);
+            setUserId(currentUserId);
+            
+            // Check if userId matches any entry in the fetched data
+            const entriesForCurrentUser = forms.filter((form) => form.userId === currentUserId);
+            console.log('Entries for current user:', entriesForCurrentUser);
+          } else {
+            console.log('No user signed in.');
+            setUserId(null);
+          }
+        } else {
+          console.log('No valid form data found');
+          setPostDataList([]);
+        }
+      } catch (error) {
+        setError(error.message);
+        console.error('Error fetching data:', error);
+      }
     };
 
-    fetchData(); // Call the fetchData function when the component mounts
+    const postsUnsubscribe = onValue(postsRef, fetchData, (error) => {
+      setError(error.message);
+      console.error('Error in database listener:', error);
+    });
 
-  }, []); // The empty dependency array ensures the useEffect runs only once when the component mounts
-
-
+    // Cleanup the listener when the component unmounts
+    return () => {
+      try {
+        postsUnsubscribe();
+      } catch (error) {
+        console.error('Error cleaning up listener:', error);
+      }
+    };
+  }, [database, auth]);
 
   return (
     <div>
-      {usersPosts.map((formData, index) => (
-        <div key={index}>
-          {/* Display your form data here */}
-          <p>CheckinWeight: {formData.CheckinWeight}</p>
-          <p>Comments or Help: {formData.CommentsorHelp}</p>
-          <p>Energy Levels: {formData.EnergyLevels}</p>
-          <p>Goals: {formData.Goals}</p>
-          <p>Gratitude: {formData.Gratitude}</p>
-        </div>
-      ))}
+      {postDataList.length > 0 ? (
+        <PostDataDisplay postDataList={postDataList} />
+      ) : (
+        <p>No forms found.</p>
+      )}
     </div>
   );
 };
