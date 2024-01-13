@@ -3,6 +3,7 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import { app } from '../ClientCheckinComponents/firebase';
 import PostDataDisplay from './PostDataDisplay';
+import { Link } from "react-router-dom"
 
 const database = getDatabase(app);
 const auth = getAuth(app);
@@ -13,12 +14,13 @@ const Posts = () => {
   const [userId, setUserId] = useState(null);
 
   useEffect(() => {
+    const database = getDatabase();
+    const auth = getAuth();
     const postsRef = ref(database, 'forms');
 
     const fetchData = (snapshot) => {
       try {
         const data = snapshot.val();
-        console.log('Fetched data:', data);
 
         if (data) {
           const formIds = Object.keys(data);
@@ -28,16 +30,10 @@ const Posts = () => {
           }));
 
           setPostDataList(forms);
-          
-          // Log the current user's ID once when the component mounts
+
           const currentUser = auth.currentUser;
           if (currentUser) {
-            const currentUserId = currentUser.uid;
-            console.log('Current User ID:', currentUserId);
-            setUserId(currentUserId);
-            
-            // Check if userId matches any entry in the fetched data
-            const entriesForCurrentUser = forms.filter((form) => form.userId === currentUserId);
+            const entriesForCurrentUser = forms.filter((form) => form.userId === currentUser.uid);
             console.log('Entries for current user:', entriesForCurrentUser);
           } else {
             console.log('No user signed in.');
@@ -58,7 +54,6 @@ const Posts = () => {
       console.error('Error in database listener:', error);
     });
 
-    // Cleanup the listener when the component unmounts
     return () => {
       try {
         postsUnsubscribe();
@@ -66,17 +61,27 @@ const Posts = () => {
         console.error('Error cleaning up listener:', error);
       }
     };
-  }, [database, auth]);
+  }, []);
 
   return (
     <div>
       {postDataList.length > 0 ? (
-        <PostDataDisplay postDataList={postDataList} />
+        <><PostDataDisplay postDataList={postDataList} />
+       </>
+
       ) : (
-        <p>No forms found.</p>
+        <><p>No forms found.</p>
+                <Link
+            type="button"
+            to="/clients/posts/new"
+            className="w-full px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+          >
+            Create Check-in
+          </Link></>
       )}
     </div>
   );
 };
 
-export default Posts;
+
+export default Posts
