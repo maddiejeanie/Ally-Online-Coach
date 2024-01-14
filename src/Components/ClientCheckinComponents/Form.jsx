@@ -600,9 +600,8 @@ const backToDashboard = () => {
           </form>
         )}
 
-        {successMessage && generateGridItem(
-            <>
-              <div className="text-s flex flex-col items-center justify-center my-4 mx-4">
+        {successMessage &&  <div className="bg-gray-100 p-4 rounded-lg shadow-2xl w-full">
+              <div className="text-s text-center my-4">
                 <strong>Form submitted!</strong>
               </div>
 
@@ -613,8 +612,8 @@ const backToDashboard = () => {
 >
                 Back to the Dashboard
             </button>
-            </>
-          )}
+            </div>
+}
 
     </ThemeProvider>
     </div>

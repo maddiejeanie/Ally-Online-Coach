@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
-import { app } from '../ClientCheckinComponents/firebase';
 import PostDataDisplay from './PostDataDisplay';
-import { Link } from "react-router-dom"
-
-const database = getDatabase(app);
-const auth = getAuth(app);
+import { Link } from 'react-router-dom';
 
 const Posts = () => {
   const [postDataList, setPostDataList] = useState([]);
@@ -29,12 +25,14 @@ const Posts = () => {
             ...data[formId],
           }));
 
-          setPostDataList(forms);
 
           const currentUser = auth.currentUser;
           if (currentUser) {
-            const entriesForCurrentUser = forms.filter((form) => form.userId === currentUser.uid);
-            console.log('Entries for current user:', entriesForCurrentUser);
+            // Set the current user ID
+            setUserId(currentUser.uid);
+
+            setPostDataList(forms.filter((form) => form.userId === currentUser.uid));
+
           } else {
             console.log('No user signed in.');
             setUserId(null);
@@ -66,22 +64,23 @@ const Posts = () => {
   return (
     <div>
       {postDataList.length > 0 ? (
-        <><PostDataDisplay postDataList={postDataList} />
-       </>
-
+        <>
+          <PostDataDisplay postDataList={postDataList} />
+        </>
       ) : (
-        <><p>No forms found.</p>
-                <Link
+        <>
+          <p>No forms found.</p>
+          <Link
             type="button"
             to="/clients/posts/new"
             className="w-full px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
           >
             Create Check-in
-          </Link></>
+          </Link>
+        </>
       )}
     </div>
   );
 };
 
-
-export default Posts
+export default Posts;
