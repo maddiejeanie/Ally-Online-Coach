@@ -580,7 +580,7 @@ const backToDashboard = () => {
     borderRadius: "0.25rem",
     backgroundColor: "#4F46E5", // Indigo-500
     color: "#FFFFFF",
-    border: "1px solid #fff",
+    border: "1px solid #4338CA",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     cursor: "pointer",
     transition: "background-color 0.3s ease-in-out",

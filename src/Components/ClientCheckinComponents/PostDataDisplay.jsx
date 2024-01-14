@@ -95,10 +95,10 @@ const PostDataDisplay = ({ postDataList }) => {
         <div className="bg-gray-100 p-8 rounded-lg shadow-2xl my-8">
   <div className="flex flex-col items-center space-y-6">
     <Link
-      to="/clients/posts"
+      to="/clients"
       className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 px-4 py-3 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200 transition duration-300 ease-in-out text-center"
     >
-      View Check-ins
+      Back to Dashboard
     </Link>
 
     <Link

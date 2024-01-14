@@ -18,21 +18,20 @@ const Dashboard = () => {
       </div>
       <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-indigo-500">Dashboard</h2>
   
-      <div className="flex flex-col items-center space-y-4">
         <Link
           to="/clients/posts"
-          className="w-full px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+          className="w-1/2 text-center px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
           >
           View Check-ins
         </Link>
   
         <Link
           to="/clients/posts/new"
-          className="w-full px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+          className="w-1/2 text-center px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
           >
           Create Check-in
         </Link>
-      </div>
+  
   
       <p className="my-8">All done, <Link className="text-indigo-500 underline" to="#" onClick={handleSignOut}>log me out</Link></p>
     </div>
