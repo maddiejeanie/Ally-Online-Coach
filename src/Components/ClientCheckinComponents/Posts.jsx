@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import PostDataDisplay from './PostDataDisplay';
 import { Link } from 'react-router-dom';
@@ -34,29 +34,24 @@ const Posts = () => {
             setPostDataList(forms.filter((form) => form.userId === currentUser.uid));
 
           } else {
-            console.log('No user signed in.');
+            setError('No user signed in.');
             setUserId(null);
           }
         } else {
-          console.log('No valid form data found');
+          setError('No valid form data found');
           setPostDataList([]);
         }
       } catch (error) {
         setError(error.message);
-        console.error('Error fetching data:', error);
       }
     };
 
-    const postsUnsubscribe = onValue(postsRef, fetchData, (error) => {
-      setError(error.message);
-      console.error('Error in database listener:', error);
-    });
 
     return () => {
       try {
         postsUnsubscribe();
       } catch (error) {
-        console.error('Error cleaning up listener:', error);
+        setError('Error cleaning up listener:', error);
       }
     };
   }, []);
@@ -71,7 +66,7 @@ const Posts = () => {
         <>
             <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
 
-          <p>No forms found.</p>
+          <p>{error}</p>
           <Link
             type="button"
             to="/clients/posts/new"
