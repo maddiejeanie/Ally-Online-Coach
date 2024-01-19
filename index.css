@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* bg-indigo-700.
-bg-gray-400.
-bg-blue-200.
-bg-indigo-300.
-bg-indigo-200 */
+
 @layer base {
     html {
         font-family: 'Inclusive Sans', serif;
         box-sizing: border-box;
+        margin: 0;
+        height: 100%;
     }
 
   body {

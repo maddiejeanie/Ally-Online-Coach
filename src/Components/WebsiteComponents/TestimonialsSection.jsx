@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
-import sanityClient from '@sanity/client'
+import { createClient } from '@sanity/client'
 
 const TestimonialsSection = () => {
     
-    const client = sanityClient({
+    const client = createClient({
         projectId: 'e8ckavtm',
         dataset: 'production',
          useCdn: true, // set to `false` to bypass the edge cache
@@ -39,15 +39,10 @@ const TestimonialsSection = () => {
               return response.json();
             })
             .then((data) => {
-              // Handle the fetched data here
-              console.log('Fetched data:', data);
+
               // Update the state with the fetched data
               setQuoteData(data.result);
             })
-            .catch((error) => {
-              // Handle any errors here
-              console.error('Error fetching data:', error);
-            });
         }, []); 
       
 
@@ -66,6 +61,7 @@ const TestimonialsSection = () => {
         className="border-0 h-32 w-32 rounded-full shadow-pop-br object-cover object-center"
         src={urlFor(testimonial.photo)}
         alt={testimonial.name}
+        key={testimonial.id}
       />
     </div>
     <div className="py-2 text-xl text-center">

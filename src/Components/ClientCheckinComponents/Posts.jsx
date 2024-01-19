@@ -70,7 +70,7 @@ const Posts = () => {
           <Link
             type="button"
             to="/clients/posts/new"
-            className="w-1/2 text-center px-4 py-2 my-4 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+            className="w-1/2 text-center px-4 py-2 my-4 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
           >
             Create Check-in
           </Link>

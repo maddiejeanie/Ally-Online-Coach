@@ -27,7 +27,6 @@ const Home = () => {
 
           // Update the state with the fetched data
           sethomeData(data.result);
-          console.log(homeData)
         })
         .catch((error) => {
           // Handle any errors here

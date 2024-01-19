@@ -143,7 +143,7 @@ const backToDashboard = () => {
         {formVisible && (
           <form onSubmit={handleSubmit}>
             <Grid container rowSpacing={4} style={{ marginBottom: "1rem" }}>
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">
+              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
                 Body Stats and Sleep
               </h2>
 
@@ -242,7 +242,7 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">
+              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
                 Stress and Energy
               </h2>
 
@@ -346,7 +346,7 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">
+              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
                 Nutrition and Training
               </h2>
 
@@ -488,7 +488,7 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">
+              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
                 Social Interaction, Goals and Reflection
               </h2>
 
@@ -608,7 +608,7 @@ const backToDashboard = () => {
               <button
   type="button"
   onClick={backToDashboard}
-  className="w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+  className="w-full px-4 py-2 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
 >
                 Back to the Dashboard
             </button>

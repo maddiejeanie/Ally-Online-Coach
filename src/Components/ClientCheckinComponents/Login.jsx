@@ -77,10 +77,10 @@ const LoginForm = () => {
       className="bg-gray-100 p-8 rounded-lg shadow-2xl w-2/3"
     >
       <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
-        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-indigo-500 text-white text-xl">
+        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-sky-500 text-white text-xl">
           <i className="fa-solid fa-dumbbell"></i>
         </div>
-        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-indigo-500">Login</h2>
+        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">Login</h2>
       </div>
 
       <div className="mb-2">
@@ -94,7 +94,7 @@ const LoginForm = () => {
           value={loginData.email}
           onChange={handleInputChange}
           placeholder="Email"
-          className="block w-full  px-4 py-2 border border-white rounded-lg bg-indigo-200 text-indigo-700 focus:outline-none focus:bg-indigo-100"
+          className="block w-full  px-4 py-2 border border-white rounded-lg bg-sky-200 text-sky-700 focus:outline-none focus:bg-sky-100"
           required
         />
       </div>
@@ -110,14 +110,14 @@ const LoginForm = () => {
           value={loginData.password}
           onChange={handleInputChange}
           placeholder="Password"
-          className="block w-full px-4 py-2 border border-white rounded-lg bg-indigo-200 text-indigo-700 focus:outline-none focus:bg-indigo-100"
+          className="block w-full px-4 py-2 border border-white rounded-lg bg-sky-200 text-sky-700 focus:outline-none focus:bg-sky-100"
           required
         />
       </div>
 
       <button
         type="submit"
-        className="my-2 w-full px-4 py-2 border border-white text-white bg-indigo-500 rounded-lg shadow-lg hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400"
+        className="my-2 w-full px-4 py-2 border border-white text-white bg-sky-500 rounded-lg shadow-lg hover:bg-sky-400 focus:outline-none focus:bg-sky-400"
       >
         Login
       </button>
@@ -125,7 +125,7 @@ const LoginForm = () => {
       <button
         type="button"
         onClick={handleCreate}
-        className="my-2 w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+        className="my-2 w-full px-4 py-2 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
       >
         Create Account
       </button>
@@ -133,7 +133,7 @@ const LoginForm = () => {
       <button
         type="button"
         onClick={handleGoogleSignin}
-        className="my-2 w-full px-4 py-2 border border-indigo-500 text-indigo-700 bg-indigo-100 rounded-lg shadow-lg hover:bg-indigo-200 focus:outline-none focus:bg-indigo-200"
+        className="my-2 w-full px-4 py-2 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
       >
         Create/Sign in via Google <i className="px-1 fa-brands fa-google"></i>
       </button>

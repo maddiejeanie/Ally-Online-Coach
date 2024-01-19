@@ -1,32 +1,39 @@
+import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/WebsiteComponents/Navbar";
 import ContactCTA from "../Components/WebsiteComponents/ContactCTA";
 import Footer from "../Components/WebsiteComponents/Footer";
 
-const RootLayout = () => {
-    const location = useLocation();
 
-    const ClientsHeader =  <div className="flex flex-col items-center justify-center my-4">
-    <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text pb-4">
-      <h1 className="p-4 h1 text-6xl uppercase text-shadow flex items-center text-transparent">
-        Client Check-In
-      </h1>
-    </div>
-  </div>
+const RootLayout = () => {
+  const location = useLocation();
+  const [themeColor, setThemeColor] = useState('red');
+
+  useEffect(() => {
+    // Logic to determine themeColor based on pathname
+    setThemeColor(
+      location.pathname.startsWith("/clients") ? 'sky' :
+      location.pathname.startsWith("/about") ? 'green' :
+      location.pathname.startsWith("/") ? 'indigo' : 'red'
+    );
+  }, [location.pathname]); // Re-run the effect when pathname changes
+
+  console.log("Current location:", location.pathname);
+  console.log("Current themeColor:", themeColor);
 
     const NoContactCTAPage = location.pathname.startsWith("/contact") || location.pathname.startsWith("/clients");
 
     return (
         <div>
-            <Navbar />
-            {location.pathname.startsWith("/clients") ? ClientsHeader : null}
+<Navbar  themeColor={themeColor} />
+  
             <main>
                 <Outlet />
             </main>
 
             {!NoContactCTAPage && <ContactCTA />}
 
-            <Footer />
+            <Footer themeColor={themeColor} />
         </div>
     );
 };
