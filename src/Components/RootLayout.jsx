@@ -7,25 +7,12 @@ import Footer from "../Components/WebsiteComponents/Footer";
 
 const RootLayout = () => {
   const location = useLocation();
-  const [themeColor, setThemeColor] = useState('red');
-
-  useEffect(() => {
-    // Logic to determine themeColor based on pathname
-    setThemeColor(
-      location.pathname.startsWith("/clients") ? 'sky' :
-      location.pathname.startsWith("/about") ? 'green' :
-      location.pathname.startsWith("/") ? 'indigo' : 'red'
-    );
-  }, [location.pathname]); // Re-run the effect when pathname changes
-
-  console.log("Current location:", location.pathname);
-  console.log("Current themeColor:", themeColor);
 
     const NoContactCTAPage = location.pathname.startsWith("/contact") || location.pathname.startsWith("/clients");
 
     return (
         <div>
-<Navbar  themeColor={themeColor} />
+<Navbar  />
   
             <main>
                 <Outlet />
@@ -33,7 +20,7 @@ const RootLayout = () => {
 
             {!NoContactCTAPage && <ContactCTA />}
 
-            <Footer themeColor={themeColor} />
+            <Footer />
         </div>
     );
 };

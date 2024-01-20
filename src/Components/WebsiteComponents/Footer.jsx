@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../ThemeContext';
 
-const Footer = ({ themeColor }) => {
+
+const Footer = () => {
+  const { themeColor, setThemeColor } = useTheme();
+
+
   const footerClass = `flex flex-row items-center bg-${themeColor}-300 p-4 justify-between content-center`;
+
+  console.log("Current themeColor in Footer:", themeColor);
 
   return (
     <div className={footerClass}>
       <nav className="w-1/2 items-center justify-start w-5/8 h1 text-2xl uppercase font-bold text-white flex">
-        <p>ASHLEY CLANCY ONLINE COACH</p>
+        <p>ASHLEY ONLINE COACH</p>
       </nav>
       <div className="items-center justify-start w-5/8 h1 text-3xl uppercase font-bold text-white flex flex-col md:flex-row-reverse">
         <div>

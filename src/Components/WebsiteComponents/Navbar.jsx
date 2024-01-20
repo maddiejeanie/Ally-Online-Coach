@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../ThemeContext';
 
-const Navbar = ({ themeColor }) => {
+const Navbar = () => {
+  const { themeColor, setThemeColor } = useTheme();
   const [hamNavOpen, setHamNavOpen] = useState(false);
 
   const toggleHamNav = () => {
@@ -34,7 +36,7 @@ const Navbar = ({ themeColor }) => {
           </button>
         </Link>
 
-        <div className={`md:hidden flex items-center space-between pr-4 text-2xl text-${themeColor}-100 ${hamNavOpen ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+        <div className={`md:hidden flex items-center space-between pr-4 text-2xl text-${themeColor}-50 ${hamNavOpen ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
           {hamNavOpen ?
             <i className={`fa-solid fa-bars hover:text-${themeColor}-500 transition delay-200 hover:cursor-pointer`} onClick={toggleHamNav}></i> :
             <i className={`fa-solid fa-xmark hover:text-${themeColor}-500 transition delay-200 hover:cursor-pointer`} onClick={toggleHamNav}></i>
