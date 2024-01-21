@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const NavMenu = (
     <div className={`h1 text-xl uppercase font-bold text-white w-full md:flex md:flex-row items-center`}>
+      test
       <div className={`bg-${themeColor}-300 md:bg-inherit`}>
         <Link to="/" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Home</Link>
       </div>
