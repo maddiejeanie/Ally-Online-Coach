@@ -1,4 +1,5 @@
 // ThemeContext.js
+import { red } from '@mui/material/colors';
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const ThemeContext = createContext();
@@ -18,13 +19,15 @@ const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Logic to determine themeColor based on pathname
     const newThemeColor =
-      window.location.pathname.startsWith("/clients") ? 'sky' : 'indigo';
+      window.location.pathname.startsWith("/clients") ? 'sky' 
+        : window.location.pathname.startsWith("/blog") ? 'green'
+        : window.location.pathname.startsWith("/about") ? 'red' : 'indigo';
 
     console.log('Setting theme color:', newThemeColor);
     console.log('Current pathname:', window.location.pathname);
 
     dispatch({ type: 'SET_THEME_COLOR', payload: newThemeColor });
-  }, []); // Run once on component mount
+  }, [window.location.pathname]);
 
   const setThemeColor = (color) => {
     console.log('Setting theme color (via setThemeColor):', color);

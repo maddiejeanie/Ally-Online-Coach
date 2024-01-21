@@ -23,8 +23,6 @@ const About = () => {
         return response.json();
       })
       .then((data) => {
-        // Handle the fetched data here
-        console.log('Fetched data:', data);
         // Update the state with the fetched data
         setContentData(data.result);
       })

@@ -4,15 +4,10 @@ import { useTheme } from '../ThemeContext';
 
 
 const Footer = () => {
-  const { themeColor, setThemeColor } = useTheme();
-
-
-  const footerClass = `flex flex-row items-center bg-${themeColor}-300 p-4 justify-between content-center`;
-
-  console.log("Current themeColor in Footer:", themeColor);
+  const { themeColor } = useTheme();
 
   return (
-    <div className={footerClass}>
+    <div className={`flex flex-row items-center bg-${themeColor}-300 p-4 justify-between content-center`}>
       <nav className="w-1/2 items-center justify-start w-5/8 h1 text-2xl uppercase font-bold text-white flex">
         <p>ASHLEY ONLINE COACH</p>
       </nav>

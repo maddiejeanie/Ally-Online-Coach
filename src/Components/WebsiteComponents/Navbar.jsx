@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../ThemeContext';
 
 const Navbar = () => {
-  const { themeColor, setThemeColor } = useTheme();
   const [hamNavOpen, setHamNavOpen] = useState(false);
+  const themeColor = 'red';
 
   const toggleHamNav = () => {
     setHamNavOpen((prevHamNavOpen) => !prevHamNavOpen);
@@ -12,12 +11,24 @@ const Navbar = () => {
 
   const NavMenu = (
     <div className={`h1 text-xl uppercase font-bold text-white w-full md:flex md:flex-row items-center`}>
-      <div className={`bg-${themeColor}-300 md:bg-inherit`}><Link to="/" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Home</Link></div>
-      <div className={`bg-${themeColor}-400 md:bg-inherit`}><Link to="/about" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>About</Link></div>
-      <div className={`bg-${themeColor}-500 md:bg-inherit`}><Link to="/coaching" className={`px-2 hover:text-${themeColor}-400 transition delay-200`}>Coaching</Link></div>
-      <div className={`bg-${themeColor}-600 md:bg-inherit`}><Link to="/clients" className={`px-2 hover:text-${themeColor}-400 transition delay-200`}>Client Checkin App</Link></div>
-      <div className={`bg-${themeColor}-700 md:bg-inherit`}><Link to="/blog" className={`px-2 hover:text-${themeColor}-400 transition delay-200`}>Blog</Link></div>
-      <div className={`bg-${themeColor}-800 md:bg-inherit`}><i href="http://instagram.com/bbyc.xo" className={`px-2 hover:text-${themeColor}-500 transition delay-200 fa-brands fa-instagram`}></i></div>
+      <div className={`bg-${themeColor}-300 md:bg-inherit`}>
+        <Link to="/" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Home</Link>
+      </div>
+      <div className={`bg-${themeColor}-400 md:bg-inherit`}>
+        <Link to="/about" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>About</Link>
+      </div>
+      <div className={`bg-${themeColor}-500 md:bg-inherit`}>
+        <Link to="/coaching" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Coaching</Link>
+      </div>
+      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
+        <Link to="/clients" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Client Checkin App</Link>
+      </div>
+      <div className={`bg-${themeColor}-700 md:bg-inherit`}>
+        <Link to="/blog" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Blog</Link>
+      </div>
+      <div className={`bg-${themeColor}-800 md:bg-inherit`}>
+        <i href="http://instagram.com/bbyc.xo" className={`px-2 hover:text-${themeColor}-500 transition delay-200 fa-brands fa-instagram`}></i>
+      </div>
     </div>
   );
 
