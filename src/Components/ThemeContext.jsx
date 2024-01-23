@@ -23,18 +23,14 @@ const ThemeProvider = ({ children }) => {
         : window.location.pathname.startsWith("/blog") ? 'green'
         : window.location.pathname.startsWith("/about") ? 'red' : 'indigo';
 
-    console.log('Setting theme color:', newThemeColor);
-    console.log('Current pathname:', window.location.pathname);
 
     dispatch({ type: 'SET_THEME_COLOR', payload: newThemeColor });
   }, [window.location.pathname]);
 
   const setThemeColor = (color) => {
-    console.log('Setting theme color (via setThemeColor):', color);
     dispatch({ type: 'SET_THEME_COLOR', payload: color });
   };
 
-  console.log('Current theme state:', state.themeColor);
 
   return (
     <ThemeContext.Provider value={{ themeColor: state.themeColor, setThemeColor }}>

@@ -71,10 +71,10 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
+          <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
     <form
       onSubmit={handleLogin}
-      className="bg-gray-100 p-8 rounded-lg shadow-2xl w-2/3"
+      className="w-2/3"
     >
       <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
         <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-sky-500 text-white text-xl">
