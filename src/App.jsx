@@ -18,6 +18,8 @@ import RootLayout from "./Components/RootLayout";
 import ClientCheckin from "./Pages/ClientCheckin";
 import Dashboard from "./Components/ClientCheckinComponents/Dashboard.jsx";
 import Posts from "./Components/ClientCheckinComponents/Posts.jsx"
+import FitHome from "./Components/FitFolioComponents/FitHome.jsx";
+import Category from "./Components/FitFolioComponents/Category.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +34,8 @@ const router = createBrowserRouter(
       <Route path="clients/posts" element={<Posts />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost />} />
+      <Route path="fitfolio" element={<FitHome />} />
+      <Route path="fitfolio/category" element={<Category />} />
     </Route>
   )
 );

@@ -11,7 +11,6 @@ const Navbar = () => {
 
   const NavMenu = (
     <div className={`h1 text-xl uppercase font-bold text-white w-full md:flex md:flex-row items-center`}>
-      test
       <div className={`bg-${themeColor}-300 md:bg-inherit`}>
         <Link to="/" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Home</Link>
       </div>
@@ -22,7 +21,10 @@ const Navbar = () => {
         <Link to="/coaching" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Coaching</Link>
       </div>
       <div className={`bg-${themeColor}-600 md:bg-inherit`}>
-        <Link to="/clients" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Client Checkin App</Link>
+        <Link to="/clients" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Client Checkin</Link>
+      </div>
+      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
+        <Link to="/fitfolio" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>FitFolio</Link>
       </div>
       <div className={`bg-${themeColor}-700 md:bg-inherit`}>
         <Link to="/blog" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Blog</Link>
