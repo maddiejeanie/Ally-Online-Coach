@@ -8,6 +8,7 @@ const TestimonialsSection = () => {
         projectId: 'e8ckavtm',
         dataset: 'production',
          useCdn: true, // set to `false` to bypass the edge cache
+           apiVersion: '2024-01-24'
       
       })
       
@@ -51,8 +52,8 @@ const TestimonialsSection = () => {
         <div className="w-3/4 p-4 text-sm md:text-base mx-auto text-indigo-400 m-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-          {quoteData.map(testimonial => (
-  <div key={testimonial.id} className="relative p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col">
+          {quoteData.map((testimonial, index) => (
+  <div key={index} className="relative p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col">
     <div className="float-left">
       <i className="fa-solid fa-quote-left text-8xl px-4 text-violet-300"></i>
     </div>

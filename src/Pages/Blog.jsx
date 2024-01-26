@@ -50,19 +50,13 @@ const Blog = () => {
 
 
   function renderBodyContent(body) {
-    const maxWords = 20;
+    const maxCharacters = 200; // Adjust this value as needed
   
-    // Combine all text from blocks into a single string
-    const fullText = body.map((block) => block.children.map((child) => child.text).join(' ')).join(' ');
+    const fullText = body.map((block) => block.children.map((child) => child.text).join(' ')).join('');
   
-    // Split the text into words
-    const words = fullText.split(' ');
+    const truncatedText = fullText.slice(0, maxCharacters);
   
-    // Combine the words into a truncated string
-    const truncatedText = words.slice(0, maxWords).join(' ');
-  
-    // Add ellipsis if there are more words
-    const ellipsis = words.length > maxWords ? '..' : '';
+    const ellipsis = fullText.length > maxCharacters ? '..' : '';
   
     return <div>{truncatedText + ellipsis}</div>;
   }
@@ -84,15 +78,15 @@ const Blog = () => {
         key={blogPost._id}
               className="p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col justify-between">
               
-              <div className='flex justify-between items-center gap-4'>
+              <div className='flex justify-between items-center gap-4 pb-4'>
                 <div className="text-white h1 px-2 py-1 bg-indigo-400 border-0 rounded-md uppercase"><p><i className="fa-solid fa-tag"></i> {blogPost.categories}</p></div>
                 <div className="font-bold text-indigo-500"><p>{blogPost.date}</p></div>
               </div>
               <img src={urlFor(blogPost.featuredImage)}
-                className='rounded-md border-0 m-4 h-40 object-cover'
-                alt='Your image alt text'
+                className='rounded-md border-0 w-full h-60 object-cover'
+                alt={blogPost.title}
               />
-              <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}><h2 className="p-2 h1 text-lg">{blogPost.title}</h2></Link>
+              <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}><h2 className="py-2 h1 text-lg">{blogPost.title}</h2></Link>
               <div className="text-indigo-900">
               {renderBodyContent(blogPost.body)}
             </div>
