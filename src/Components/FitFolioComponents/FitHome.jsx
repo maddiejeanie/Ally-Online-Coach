@@ -10,6 +10,7 @@ const FitHome = () => {
       </div>
       <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-rose-500">FitFolio</h2>
   
+<<<<<<< HEAD
 <p>Welcome to FitFolio – your ultimate fitness companion! 🏋️‍♂️ Explore diverse workouts categorized by body part, equipment, target muscles, or search by name. Enjoy a user-friendly interface for a seamless fitness experience. Stay fit anytime, anywhere. Let's make every workout count! 💪</p>     
 
 
@@ -39,6 +40,14 @@ const FitHome = () => {
             </button>
         </ul>
         </div>
+=======
+      <p>welcome to fitfolio</p>
+      <p>Category: Body Part</p>
+      <p>Category: Equiptment</p>
+      <p>Category: Target</p>
+      <p>search by name</p>
+    <Listing />
+>>>>>>> eaa2280624b5c3fe0d4e74bd52d8cccadf018426
     </div>
   );
 };
