@@ -1,8 +1,10 @@
-import React from "react";
+import {React, useState} from "react";
 import { Link } from "react-router-dom";
 
 
 const FitHome = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
       <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-rose-500 text-white text-xl">
@@ -20,6 +22,8 @@ const FitHome = () => {
   <input
     className="shadow appearance-none border rounded w-full py-2 px-4 text-rose-700 leading-tight focus:outline-none focus:shadow-outline transition duration-500 ease-in-out border-rose-500"
     id="searchByName"
+    value={searchTerm}
+    onChange={e => setSearchTerm(e.target.value)}
     type="text"
     placeholder="Search by Exercise Name"
   />

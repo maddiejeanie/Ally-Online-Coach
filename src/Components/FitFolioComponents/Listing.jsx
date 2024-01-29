@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Related from './Related';
+import PreviewCard from './PreviewCard';
 
 const Listing = () => {
   const [data, setData] = useState([
@@ -69,9 +69,11 @@ const Listing = () => {
             </div>
           </div>
         </section>
-        <Related exercise={exercise} category="target"/>
-        <Related exercise={exercise} category="bodyPart"/>
-        <Related exercise={exercise} category="equipment"/>
+        <PreviewCard exercise={exercise} length={3} category="target"/>
+        <PreviewCard exercise={exercise} length={3} category="bodyPart"/>
+        <PreviewCard exercise={exercise} length={8} category="equipment"/>
+
+        
 
         </div> 
       ))}

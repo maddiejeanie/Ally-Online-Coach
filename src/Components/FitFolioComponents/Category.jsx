@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import Related from "./Related";
 
+import SearchResults from "./SearchResults";
 const Category = () => {
   const [category, setCategories] = useState([
     "assisted",
@@ -42,6 +42,8 @@ const Category = () => {
     <i className="fa-solid fa-dumbbell"></i>
   </div>
   <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-rose-400">FitFolio</h2>
+  <h3 className="m-8 h3 text-xl uppercase text-shadow flex justify-center text-rose-500">Search by [categoryType]</h3>
+
   <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {category.map((subcategory, index) => (
       <li key={index}>
@@ -51,6 +53,10 @@ const Category = () => {
       </li>
     ))}
   </ul>
+
+  <SearchResults />
+
+  
 </div>
 
   );
