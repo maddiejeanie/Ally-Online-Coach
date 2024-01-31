@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const PreviewCard = ({ exercise, category, length }) => {
     const repeatedData = Array.from({ length }, (_, index) => exercise);
@@ -17,6 +18,7 @@ const PreviewCard = ({ exercise, category, length }) => {
 
         <section className="grid grid-cols-3 gap-4">
           {repeatedData.flat().map((exercise, index) => (
+                  <Link to={`/fitfolio/exercise/${exercise.id}`}>
           <div className=" bg-rose-200 rounded-lg shadow-lg text-s p-4">
   <img className="rounded-lg shadow-lg mb-4" src={exercise.gifUrl} alt={exercise.name} />
 
@@ -29,8 +31,8 @@ const PreviewCard = ({ exercise, category, length }) => {
     </p>
   ))}
 </div>
-
 </div>
+</Link>
 ))
 }
 

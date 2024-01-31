@@ -21,6 +21,7 @@ import Posts from "./Components/ClientCheckinComponents/Posts.jsx"
 import FitHome from "./Components/FitFolioComponents/FitHome.jsx";
 import Category from "./Components/FitFolioComponents/Category.jsx";
 import Listing from "./Components/FitFolioComponents/Listing.jsx"
+import SearchResults from "./Components/FitFolioComponents/SearchResults.jsx"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,8 +37,10 @@ const router = createBrowserRouter(
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost />} />
       <Route path="fitfolio" element={<FitHome />} />
-      <Route path="fitfolio/listing" element={<Listing />} />
-      <Route path="fitfolio/category" element={<Category />} />
+      <Route path="fitfolio/:category" element={<Category />} />
+      <Route path="fitfolio/:category/:subcategory" element={<SearchResults />} />
+      <Route path="fitfolio/exercise/:exerciseId" element={<Listing />} />
+
     </Route>
   )
 );

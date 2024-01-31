@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import imageUrlBuilder from '@sanity/image-url';
 import {createClient} from '@sanity/client';
-import { useParams, useLocation } from 'react-router-dom'; // Import useParams to get the slug from the URL
+import { useParams, useLocation } from 'react-router-dom'; 
 import { Link } from "react-router-dom";
 
 

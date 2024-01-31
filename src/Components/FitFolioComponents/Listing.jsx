@@ -42,9 +42,10 @@ const Listing = () => {
   }, []);
 
   return (
+    
     <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
       {data.map((exercise, index) => (
-        <div>
+         <div>
         <section key={index} className="flex text-rose-900 flex-col sm:flex-row gap-4">
           <div className='m-2 sm:w-2/3 md:w-1/2'>
             <img className=" rounded-lg shadow-lg" src={exercise.gifUrl} alt={exercise.name} />
@@ -76,6 +77,7 @@ const Listing = () => {
         
 
         </div> 
+      
       ))}
     </div>
   );
