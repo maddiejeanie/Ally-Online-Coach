@@ -64,17 +64,18 @@ const SearchResults = () => {
       
       return (
         <>
-
+            <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
           {Loading ? (
             <LoadingSpinner />
-          ) : (
+          ) : ( 
             <button
               className="w-1/2 px-4 py-2 my-8 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition duration-300"
               onClick={handleLoadMore}
             >
-              Load More
+              Load More TESSSSST
             </button>
           )}
+        </div>
         </>
       );
       
