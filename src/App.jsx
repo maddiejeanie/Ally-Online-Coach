@@ -39,6 +39,7 @@ const router = createBrowserRouter(
       <Route path="fitfolio" element={<FitHome />} />
       <Route path="fitfolio/:category" element={<Category />} />
       <Route path="fitfolio/category/:categoryName" element={<Category />} />
+      <Route path="fitfolio/category/:categoryName/:subcategory" element={<SearchResults />} />
       <Route path="fitfolio/exercise/:exerciseId" element={<Listing />} />
 
     </Route>

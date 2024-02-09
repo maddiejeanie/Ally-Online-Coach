@@ -8,7 +8,7 @@ const FitHome = () => {
   const CategoryButton = ({ categoryName }) => (
     <Link to={`/fitfolio/category/${categoryName.toLowerCase()}`}>
     <button className="w-full h-20 px-4 py-2 bg-rose-500 text-white rounded-md hover:bg-rose-600 transition duration-300">
-        {categoryName}
+        {categoryName.toLowerCase()}
       </button>
     </Link>
   );
