@@ -27,14 +27,7 @@ const FitHome = () => {
   <label className="block text-rose-700 text-sm font-bold mb-2" aria-label="Search by Name" htmlFor="searchByName">
     Search by Name
   </label>
-  <input
-    className="shadow appearance-none border rounded w-full py-2 px-4 text-rose-700 leading-tight focus:outline-none focus:shadow-outline transition duration-500 ease-in-out border-rose-500"
-    id="searchByName"
-    value={searchTerm}
-    onChange={e => setSearchTerm(e.target.value)}
-    type="text"
-    placeholder="Search by Exercise Name"
-  />
+ 
 
 
 <p className="block text-rose-700 text-sm font-bold mt-4">Search by Category</p>

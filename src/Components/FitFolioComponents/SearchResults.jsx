@@ -6,7 +6,7 @@ import { fetchData, options } from './fetchData';
 import Breadcrumbs from "./Breadcrumbs";
 
 const SearchResults = () => {
-  const { categoryName, subcategory, exerciseId } = useParams();
+  const { categoryName, subcategory } = useParams();
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showLoadMore, setShowLoadMore] = useState(false);
@@ -22,9 +22,7 @@ const SearchResults = () => {
         correctedCategoryName = "bodyPart";
       }
       endpoint = `/${correctedCategoryName}/${subcategory.replace("-", "%20")}?limit=${lengthWanted}&offset=${offset}`;
-    } else if (exerciseId) {
-      endpoint = `/exercise/${exerciseId}?limit=${lengthWanted}&offset=${offset}`;
-    }
+    } 
 
     const fetchDataAndSetExercises = async () => {
       try {

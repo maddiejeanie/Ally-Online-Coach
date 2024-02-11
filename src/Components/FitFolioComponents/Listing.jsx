@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import PreviewCard from './PreviewCard';
+
 import { useParams, Link } from 'react-router-dom';
 import { fetchData, options } from './fetchData';
 import LoadingSpinner from './LoadingSpinner';
+import Related from './Related';
 const Listing = () => {
   let { exerciseId } = useParams();
+
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -27,40 +29,50 @@ const Listing = () => {
   }, [exerciseId]); 
 
   return (
-    <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
+    <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col my-4 mx-auto sm:w-1/2">
       {loading && <LoadingSpinner />}
       {!loading && (
+        <>
+        <Link>test</Link>
         <section className="flex text-rose-900 flex-col-reverse sm:flex-row gap-4">
           <div className='m-2 sm:w-2/3 md:w-1/2'>
             <img className="rounded-lg shadow-lg align-center" src={data.gifUrl} alt={data.name} />
             <div className='py-8'>
 
-<p>
+            <p>
   The {data.name} exercises the{' '}
-  <Link to={`${urlbasis}/bodypart/${data.bodyPart.replace(/ /g, '-')}`} className="font-bold">
+  <Link to={`${urlbasis}/bodypart/${encodeURIComponent(data.bodyPart.replace(/ /g, '-'))}`} className="font-bold">
     {data.bodyPart}
   </Link> using{' '}
-  <Link to={`${urlbasis}/equipment/${data.equipment.replace(/ /g, '-')}}`} className="font-bold">
+  <Link to={`${urlbasis}/equipment/${encodeURIComponent(data.equipment.replace(/ /g, '-'))}`} className="font-bold">
     {data.equipment}
   </Link>, targeting your{' '}
-  <Link to={`${urlbasis}/target/${data.target.replace(/ /g, '-')}}`} className="font-bold">
+  <Link to={`${urlbasis}/target/${encodeURIComponent(data.target.replace(/ /g, '-'))}`} className="font-bold">
     {data.target}
   </Link> and the{' '}
   {data.secondaryMuscles && data.secondaryMuscles.length > 0 ? (
-    <>
-      <span className="font-bold">
-        {data.secondaryMuscles.slice(0, -1).join(', ')}
-      </span>{' '}
-      and{' '}
-      <Link to={`${urlbasis}/target/${data.secondaryMuscles[data.secondaryMuscles.length - 1].replace(/ /g, '-')}}`} className="font-bold">
-        {data.secondaryMuscles[data.secondaryMuscles.length - 1]}
-      </Link>
-    </>
-  ) : (
-    <span className="font-bold">None</span>
-  )}
+  <>
+    {data.secondaryMuscles.slice(0, -1).map((muscle, index) => (
+      <span key={index}>
+        <Link to={`${urlbasis}/target/${encodeURIComponent(muscle.replace(/ /g, '-'))}`} className="font-bold">
+          {muscle}
+        </Link>
+        {index < data.secondaryMuscles.length - 2 && ', '}
+      </span>
+    ))}
+    {' '}
+    and{' '}
+    <Link to={`${urlbasis}/target/${encodeURIComponent(data.secondaryMuscles[data.secondaryMuscles.length - 1].replace(/ /g, '-'))}`} className="font-bold">
+      {data.secondaryMuscles[data.secondaryMuscles.length - 1]}
+    </Link>
+  </>
+) : (
+  <span className="font-bold">None</span>
+)}
+
   .
 </p>
+
 
             </div>
           </div>
@@ -76,6 +88,22 @@ const Listing = () => {
             </div>
           </div>
         </section>
+      <section>
+      <h3 className="my-8 h3 text-xl uppercase text-shadow text-rose-500">
+        Related {data.target} Exercises
+        </h3>
+        <Related lengthWanted={3} categoryName={"target"} subcategory={data.target} />
+        <h3 className="my-8 h3 text-xl uppercase text-shadow text-rose-500">
+        Related {data.bodyPart} Exercises
+        </h3>
+        <Related lengthWanted={3} categoryName={"bodypart"} subcategory={data.bodyPart}/>
+        <h3 className="my-8 h3 text-xl uppercase text-shadow  text-rose-500">
+        Related {data.equipment} Exercises
+        </h3>
+        <Related lengthWanted={3} categoryName={"equipment"} subcategory={data.equipment}/>
+       
+      </section>
+      </>
       )}
     </div>
   );

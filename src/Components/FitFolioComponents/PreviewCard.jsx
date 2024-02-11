@@ -4,7 +4,7 @@ const PreviewCard = ({ exercise }) => {
   return (
     <Link to={`/fitfolio/exercise/${exercise.id}`} className="block h-full">
       <div className="bg-rose-200 rounded-lg shadow-lg text-s p-4 h-full flex flex-col justify-between">
-        <img className="rounded-lg shadow-lg mb-4" src={exercise.gifUrl} alt={exercise.name} />
+        <img className="rounded-lg shadow-lg mb-4 bg-white" src={exercise.gifUrl} alt={exercise.name} />
 
         <h1 className="py-2 h1 text-l text-rose-900 uppercase text-shadow text-center">{exercise.name}</h1>
 
