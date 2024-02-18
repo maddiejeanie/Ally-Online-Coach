@@ -22,6 +22,7 @@ import FitHome from "./Components/FitFolioComponents/FitHome.jsx";
 import Category from "./Components/FitFolioComponents/Category.jsx";
 import Listing from "./Components/FitFolioComponents/Listing.jsx"
 import SearchResults from "./Components/FitFolioComponents/SearchResults.jsx"
+import MotivateHome from "./Components/MotivateMeComponents/MotivateHome.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
       <Route path="fitfolio/category/:categoryName" element={<Category />} />
       <Route path="fitfolio/category/:categoryName/:subcategory" element={<SearchResults />} />
       <Route path="fitfolio/exercise/:exerciseId" element={<Listing />} />
+      <Route path="/motivateme" element={<MotivateHome />} />
 
     </Route>
   )

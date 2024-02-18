@@ -14,23 +14,20 @@ const Navbar = () => {
       <div className={`bg-${themeColor}-300 md:bg-inherit`}>
         <Link to="/" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Home</Link>
       </div>
-      <div className={`bg-${themeColor}-400 md:bg-inherit`}>
-        <Link to="/about" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>About</Link>
-      </div>
-      <div className={`bg-${themeColor}-500 md:bg-inherit`}>
-        <Link to="/coaching" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Coaching</Link>
-      </div>
-      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
-        <Link to="/clients" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Client Checkin</Link>
-      </div>
-      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
-        <Link to="/fitfolio" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>FitFolio</Link>
-      </div>
       <div className={`bg-${themeColor}-700 md:bg-inherit`}>
         <Link to="/blog" className={`px-2 hover:text-${themeColor}-500 transition delay-200`}>Blog</Link>
       </div>
+      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
+        <Link to="/clients" className={`px-2 hover:text-${themeColor}-300 transition delay-200`}>Client Checkin</Link>
+      </div>
+      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
+        <Link to="/fitfolio" className={`px-2 hover:text-${themeColor}-200 transition delay-200`}>FitFolio</Link>
+      </div>
+      <div className={`bg-${themeColor}-600 md:bg-inherit`}>
+        <Link to="/motivateme" className={`px-2 hover:text-${themeColor}-200 transition delay-200`}>MotivateMe</Link>
+      </div>
       <div className={`bg-${themeColor}-800 md:bg-inherit`}>
-        <i href="http://instagram.com/bbyc.xo" className={`px-2 hover:text-${themeColor}-500 transition delay-200 fa-brands fa-instagram`}></i>
+        <i href="http://instagram.com/" className={`px-2 hover:text-${themeColor}-500 transition delay-200 fa-brands fa-instagram`}></i>
       </div>
     </div>
   );

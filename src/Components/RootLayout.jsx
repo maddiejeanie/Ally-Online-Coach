@@ -6,9 +6,9 @@ import Footer from "../Components/WebsiteComponents/Footer";
 
 
 const RootLayout = () => {
-  const location = useLocation();
+  const location = useLocation()
 
-    const NoContactCTAPage = location.pathname.startsWith("/contact") || location.pathname.startsWith("/clients") || location.pathname.startsWith("/fitfolio");
+    const ShouldHaveContactCTAPage = location.pathname === '/index.html' || location.pathname === '/about';
 
     return (
         <div>
@@ -18,7 +18,7 @@ const RootLayout = () => {
                 <Outlet />
             </main>
 
-            {!NoContactCTAPage && <ContactCTA />}
+            {ShouldHaveContactCTAPage && <ContactCTA />}
 
             <Footer />
         </div>
