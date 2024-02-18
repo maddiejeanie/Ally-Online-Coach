@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { ChatPrompts } from "./ChatPrompts";
+import { ChatLoading } from "./ChatLoading";
 
 const StartChat = ({ selectedTrainer, goBack }) => {
     const [startPrompt, setStartPrompt] = useState("");
     const [inputText, setInputText] = useState("");
     const [messages, setMessages] = useState([]);
     const [hidePrompts, setHidePrompts] = useState(false);
+    const [isChatLoading, setChatLoading] = useState(false);
 
     const handlePromptClick = (prompt) => {
         setInputText(prompt);
@@ -24,28 +26,39 @@ const StartChat = ({ selectedTrainer, goBack }) => {
 
     const processUserMessage = (text) => {
         // Simulate bot response (replace with actual logic)
-        const botResponse = { sender: "bot", text: "This is a " };
+        const botResponse = { sender: "bot", text: "This is a test reply" };
         const userResponse = { sender: "user", text };
-      
-            setMessages([...messages, userResponse, botResponse]);
+            setChatLoading(true)
+
+            setTimeout(() => {
+                setMessages([...messages, userResponse, botResponse]);
+                setChatLoading(false)
+            }, 3000)
+  
   
     };
 
     return (
-        <div className={`border-0 rounded-lg shadow-lg bg-emerald-700 items-center justify-between`}>
-            <div className="rounded-s-sm flex flex-row justify-between items-center p-4 ">
-                <button onClick={goBack} className="hover:bg-teal-800 shadow-xl text-white rounded-xl h-full px-2 py-1 w-1/4">
-                    <span className="mr-2">◄</span>
-                    <span>Back</span>
-                </button>
-                <h2 className="m-8 h2 text-white text-xl uppercase text-shadow  flex justify-center">{selectedTrainer.name}</h2>
-                <div className="relative">
-                    <img className="w-1/6 rounded-full shadow-xl" src={selectedTrainer.image} alt={selectedTrainer.name} />
-                    <div className="absolute top-0 right-0 mt-1 ml-1">
-                        <div className="h-5 w-5 bg-teal-400 rounded-full animate-pulse"></div>
-                    </div>
-                </div>
-            </div>
+
+
+
+<div className="border-0 rounded-lg shadow-lg bg-emerald-700">
+
+    <div className="rounded-s-sm flex flex-row justify-around items-center p-4 ">
+        <button onClick={goBack} className="hover:bg-emerald-700 bg-teal-800 shadow-xl text-white rounded-xl h-full px-2 py-1">
+            <span className="mr-2">◄</span>
+            <span>Back</span>
+        </button>
+        <h2 className="m-8 h2 text-white text-xl uppercase text-shadow">{selectedTrainer.name}</h2>
+        <div className="rounded-full shadow-xl h-24 w-24 relative">
+  <img className="h-full w-full rounded-full object-cover" src={selectedTrainer.image} alt={selectedTrainer.name} />
+  <div className="absolute top-0 right-0 mt-1 mr-1">
+    <div className="h-4 w-4 bg-teal-400 rounded-full animate-pulse delay-1000"></div>
+  </div>
+</div>
+
+    </div>
+
 
             {!hidePrompts && (
     <div className="flex flex-col p-2 justify-start items-end bg-emerald-500">
@@ -69,13 +82,17 @@ const StartChat = ({ selectedTrainer, goBack }) => {
             key={index} 
             className={
                 message.sender === "user" 
-                ? "bg-white rounded-xl px-2 py-1 mt-4 self-end text-teal-600 text-right"
+                ? "bg-white rounded-xl px-2 py-1 mt-4 self-end text-teal-600 text-right "
                 : "bg-emerald-600 rounded-xl mx-4 px-2 py-1 mt-4 text-white self-start"
             }
         >
             {message.text}
+            
         </div>
     ))}
+
+    
+{isChatLoading && <ChatLoading />}
 </div>
 
 
@@ -97,7 +114,7 @@ onClick={initiateChat}
 
     
         </div>
-    );
+);
 };
 
 export default StartChat;
