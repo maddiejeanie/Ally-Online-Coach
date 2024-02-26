@@ -8,8 +8,8 @@ const LoginForm = () => {
   const provider = new GoogleAuthProvider();
 
   const [loginData, setLoginData] = useState({
-    email: "test@test.com",
-    password: "test123",
+    email: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -71,17 +71,25 @@ const LoginForm = () => {
   }
 
   return (
-          <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
-    <form
-      onSubmit={handleLogin}
-      className="w-2/3"
-    >
-      <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
+          <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 md:w-1/2">
+
+      <div className="text-s flex flex-col items-center justify-center my-4 mx-auto ">
         <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-sky-500 text-white text-xl">
           <i className="fa-solid fa-dumbbell"></i>
         </div>
-        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">Login</h2>
+        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">Client Checkin</h2>
+        <p className="my-4 w-2/3 text-justify">
+Introducing "Client Check-in" – your ultimate solution for hassle-free check-ins! 
+Say goodbye to trying to remember what information you need to share, or having your trainer remind you it's time to checkin!
+ With <strong>Firestore's authentication</strong> and <strong>real-time database</strong>, effortlessly log your check-ins and track your fitness journey with your trainer. 
+ Embrace convenience and log your Client Check-in today!</p>
       </div>
+      <form
+      onSubmit={handleLogin}
+      className="w-2/3"
+    >
+      <h3 className="h3 text-3xl uppercase text-shadow flex justify-start text-sky-500">Login</h3>
+
 
       <div className="mb-2">
         <label htmlFor="email" className="sr-only">

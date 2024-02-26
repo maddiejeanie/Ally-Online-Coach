@@ -29,7 +29,7 @@ export const TrainerData: Trainer[] = [
         "Thrives on pushing you with strategic workout plans, high-intensity intervals, and motivational speeches emphasizing discipline and commitment.",
     },
     catchphrase:
-      "Soldier, we're on a mission to conquer your fitness goals. No excuses, no surrender. Get ready to crush every obstacle in your path!",
+      "Together we're conquering your fitness goals. No room for excuses, no surrendering. Prepare to overcome every obstacle in your path!",
   },
   {
     name: "Sphinx",
@@ -40,6 +40,6 @@ export const TrainerData: Trainer[] = [
         "Encourages you to break free from the ordinary with high-energy exercises, unconventional workouts, and a strategic approach to fitness planning.",
     },
     catchphrase:
-      "Unleash your inner maverick! We're rewriting the rules of fitness with bold moves, high energy, and strategic planning. Get ready for a fitness revolution!",
+      "We're rewriting the rules of fitness with bold moves, high energy, and strategic planning. Get ready for a fitness revolution!",
   }
 ];

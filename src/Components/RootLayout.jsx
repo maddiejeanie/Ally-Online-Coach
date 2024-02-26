@@ -8,7 +8,7 @@ import Footer from "../Components/WebsiteComponents/Footer";
 const RootLayout = () => {
   const location = useLocation()
 
-    const ShouldHaveContactCTAPage = location.pathname === '/index.html' || location.pathname === '/about';
+    const ShouldHaveContactCTAPage = location.pathname === '/' || location.pathname === '/about';
 
     return (
         <div>

@@ -38,14 +38,14 @@ const Home = () => {
     <>
     <div className="mx-auto my-10 md:w-3/4">
   <section className="flex text-indigo-900 flex-col sm:flex-row">
-  <div className='m-2 sm:w-2/3 md:w-1/2'>
-  <img className="border rounded-lg shadow-lg" src="/assets/ash-1.jpg" alt="Ash Personal Trainer" />
+  <div className='m-2 sm:w-2/3 md:w-1/2 object-cover'>
+  <img className="border rounded-lg shadow-lg" src="/assets/ash-1.jpg" alt="Ally Personal Trainer" />
 </div>
 
 
       <div className="p-4 text-s -mt-16 flex flex-col sm:-ml-40 sm:mt-0 sm:w-1/2 md:w-2/3">
         <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
-          <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right ">Hi, I'm Ash..</h1>
+          <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right ">Hi, I'm Ally..</h1>
         </div>
         
        <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">

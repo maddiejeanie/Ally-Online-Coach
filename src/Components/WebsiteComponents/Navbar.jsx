@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [hamNavOpen, setHamNavOpen] = useState(false);
-  const themeColor = 'red';
+  const themeColor = 'blue';
 
   const toggleHamNav = () => {
     setHamNavOpen((prevHamNavOpen) => !prevHamNavOpen);

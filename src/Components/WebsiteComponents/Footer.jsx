@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../ThemeContext';
 
@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className={`flex flex-row items-center bg-${themeColor}-300 p-4 justify-between content-center`}>
       <nav className="w-1/2 items-center justify-start w-5/8 h1 text-2xl uppercase font-bold text-white flex">
-        <p>ASHLEY ONLINE COACH</p>
+        <p>ALLY ONLINE COACH</p>
       </nav>
       <div className="items-center justify-start w-5/8 h1 text-3xl uppercase font-bold text-white flex flex-col md:flex-row-reverse">
         <div>
@@ -22,7 +22,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex my-2 mx-3">
-          <Link to="http://instagram.com/bbyc.xo">
+          <Link to="http://instagram.com/">
             <i className={`px-2 hover:text-${themeColor}-100 transition delay-320 fa-brands fa-instagram`}></i>
           </Link>
           <div>
