@@ -19,30 +19,26 @@ const TestimonialsSection = () => {
       }
       
         // Define blogData state and setBlogData function
-        const [quoteData, setQuoteData] = useState([]);
+        const [testimonialData, setTestimonialData] = useState([]);
       
        useEffect(() => {
-          // Construct the Sanity API URL
-          const PROJECT_ID = 'e8ckavtm'; // Replace with your Sanity project ID
-          const DATASET = 'production'; // Replace with your dataset name
-      
+  
+          const PROJECT_ID = 'e8ckavtm';
+          const DATASET = 'production';
           const QUERY = '*[_type == "testimonial"]';
           const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
           
           // Make the HTTP request
           fetch(PROJECT_URL)
             .then((response) => {
-              // Check if the response status is OK (status code 200)
               if (!response.ok) {
                 throw new Error('Network response was not ok');
               }
-              // Parse the JSON response
               return response.json();
             })
             .then((data) => {
 
-              // Update the state with the fetched data
-              setQuoteData(data.result);
+              setTestimonialData(data.result);
             })
         }, []); 
       
@@ -52,7 +48,7 @@ const TestimonialsSection = () => {
         <div className="w-3/4 p-4 text-sm md:text-base mx-auto text-indigo-400 m-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-          {quoteData.map((testimonial, index) => (
+          {testimonialData.map((testimonial, index) => (
   <div key={index} className="relative p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col">
     <div className="float-left">
       <i className="fa-solid fa-quote-left text-8xl px-4 text-violet-300"></i>

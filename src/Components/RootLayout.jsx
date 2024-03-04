@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/WebsiteComponents/Navbar";
 import ContactCTA from "../Components/WebsiteComponents/ContactCTA";

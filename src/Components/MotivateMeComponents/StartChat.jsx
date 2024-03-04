@@ -60,7 +60,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
     };
 
     return ( 
-        <div className="border-0 rounded-lg shadow-lg bg-emerald-500 flex flex-col justify-between">
+<div className="border-0 rounded-lg shadow-lg bg-emerald-500 flex flex-col justify-between w-2/3 overflow-y-auto scroll-smooth h-screen">
             <section>
             <div className="rounded-s-sm flex flex-row justify-around items-center p-4 bg-emerald-700">
                 <button onClick={goBack} className="hover:bg-emerald-700 bg-teal-800 shadow-xl text-white rounded-xl h-full px-2 py-1">

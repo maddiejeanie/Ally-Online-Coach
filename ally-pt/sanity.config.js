@@ -6,16 +6,14 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Ash PT',
+  title: 'Ally PT',
 
   projectId: 'e8ckavtm',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
 
-  schema: {
-    types: [...schemaTypes],
-  },
+  schema: { types: schemaTypes },
 })
 
 
