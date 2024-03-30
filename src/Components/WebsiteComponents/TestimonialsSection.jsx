@@ -45,36 +45,37 @@ const TestimonialsSection = () => {
 
   return (
 
-        <div className="w-3/4 p-4 text-sm md:text-base mx-auto text-indigo-400 m-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="w-full sm:w-3/4 p-4 text-sm md:text-base mx-auto text-indigo-400">
+          <div className=" bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
+          <h1 className="my-4 h1 text-6xl uppercase text-shadow flex text-transparent">Happy Clients</h1>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {testimonialData.map((testimonial, index) => (
+    <div key={index} className={`relative p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col ${index % 3 === 2 && index !== 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
+      <div className="float-left">
+        <i className="fa-solid fa-quote-left text-8xl px-4 text-violet-300"></i>
+      </div>
+      <div className="flex items-center justify-center py-4 -mt-16">
+        <img
+          className="border-0 h-32 w-32 rounded-full shadow-pop-br object-cover object-center"
+          src={urlFor(testimonial.photo)}
+          alt={testimonial.name}
+          key={testimonial.id}
+        />
+      </div>
+      <div className="py-2 text-xl text-center">
+        {testimonial.name}, {testimonial.yearsTraining} {testimonial.yearsTraining > 1 ? 'years' : 'year'} of training
+      </div>
+      <div className="z-10">
+        <p className="text-indigo-900 text-justify">{testimonial.testimony}</p>
+        <div className="absolute bottom-0 right-0 -z-10">
+          <i className="fa-solid fa-quote-right text-8xl px-4 text-violet-300 mt-8"></i>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
-          {testimonialData.map((testimonial, index) => (
-  <div key={index} className="relative p-4 border-0 rounded-lg shadow-lg bg-indigo-200 flex flex-col">
-    <div className="float-left">
-      <i className="fa-solid fa-quote-left text-8xl px-4 text-violet-300"></i>
-    </div>
-    <div className="flex items-center justify-center py-4 -mt-16">
-      <img
-        className="border-0 h-32 w-32 rounded-full shadow-pop-br object-cover object-center"
-        src={urlFor(testimonial.photo)}
-        alt={testimonial.name}
-        key={testimonial.id}
-      />
-    </div>
-    <div className="py-2 text-xl text-center">
-      {testimonial.name}, {testimonial.yearsTraining} {testimonial.yearsTraining > 1? 'years': 'year'} of training
-    </div>
-    <div className="z-10">
-      <p className="text-indigo-900 text-justify">{testimonial.testimony}</p>
-      <div className="absolute bottom-0 right-0 -z-10">
-    <i className="fa-solid fa-quote-right text-8xl px-4 text-violet-300 mt-8"></i>
-  </div>
-    </div>
-  </div>
-))}
-
-            
-          </div>
         </div>
       );
     };

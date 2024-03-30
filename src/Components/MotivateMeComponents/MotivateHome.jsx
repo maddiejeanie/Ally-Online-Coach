@@ -12,10 +12,10 @@ const MotivateHome = () => {
       
 
     return (
-          <div className=" bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 md:w-1/2">
-    <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-teal-500 text-white text-xl">
-      <i className="fa-solid fa-dumbbell"></i>
-    </div>
+        <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col items-center justify-center my-4 mx-auto md:w-1/2">
+        <div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-teal-500 text-white text-xl">
+          <i className="fa-solid fa-dumbbell"></i>
+        </div>
     <h2 className="my-8 h2 text-3xl uppercase text-shadow flex justify-end text-teal-500">MotivateMe</h2>
         {showTrainer ? (
                 <SelectTrainer onTrainerSelected={(trainer) => {
@@ -31,4 +31,4 @@ const MotivateHome = () => {
     );
 };
 
-export default MotivateHome;
+export default MotivateHome

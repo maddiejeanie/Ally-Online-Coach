@@ -7,11 +7,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Coaching from "./Pages/Coaching";
 import Blog from "./Pages/Blog";
 import IndvBlogPost from './Pages/indvBlogPost.jsx';
+import Contact from "./Components/WebsiteComponents/Contact.jsx";
 
 import Form from "./Components/ClientCheckinComponents/Form.jsx";
 import RootLayout from "./Components/RootLayout";
@@ -28,9 +26,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="coaching" element={<Coaching />} />
       <Route path="clients" element={<ClientCheckin />} />
       <Route path="clients/dashboard" element={<Dashboard />} />
       <Route path="clients/posts/new" element={<Form />} />

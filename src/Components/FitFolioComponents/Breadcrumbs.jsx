@@ -5,15 +5,17 @@ const Breadcrumbs = () => {
   const { categoryName, subcategory } = useParams();
 
   return (
-    <>
-      <div className="flex justify-start my-2 text-m text-shadow gap-1 uppercase text-rose-900">
-        <Link to="/fitfolio">Home</Link> >
-        <Link to={`/fitfolio/category/${categoryName}`}>{categoryName}</Link> >
-        {subcategory && (
-          <Link to={`/category/${categoryName}/${subcategory}`}>{subcategory}</Link>
-        )}
+      <div className=" py-2 my-2 flex flex-start gap-2 text-white rounded-md ">
+         <button
+            className="px-4 py-2 bg-rose-700 text-white rounded-md block  hover:bg-rose-600 transition duration-300">
+              <Link  to="/fitfolio">home</Link></button> 
+              <button
+            className="px-4 py-2 bg-rose-700 text-white rounded-md block  hover:bg-rose-600 transition duration-300">
+              <Link  to={`/fitfolio/category/${categoryName}`}>{categoryName.toUpperCase()}</Link></button> 
+        <p className="px-4 py-2">{subcategory && subcategory.toUpperCase()}</p>
+
       </div>
-    </>
+
   );
 };
 

@@ -44,13 +44,14 @@ const SearchResults = () => {
   }
 
   return (
-    <div className="bg-gray-100 p-4 rounded-lg shadow-2xl w-full text-s flex flex-col my-4 mx-auto sm:w-3/4 md:w-1/2">
+    <div className="bg-gradient-to-r from-rose-400 to-rose-600 p-4 rounded-lg shadow-2xl w-full text-s text-white flex flex-col
+     justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
      
       {loading && <LoadingSpinner />}
       {exercises && (
         <>
-          <h3 className="m-4 h3 text-xl uppercase text-shadow flex justify-center text-rose-500">
-            {subcategory ? subcategory.replace("-", " ") : 'Exercises'}
+          <h3 className="m-4 h3 text-xl uppercase text-shadow flex justify-center text-rose-100">
+            {subcategory && subcategory.replace("-", " ")} Exercises
           </h3>
 
            <Breadcrumbs />
@@ -62,11 +63,11 @@ const SearchResults = () => {
             ))}
           </section>
 
-          <p className="my-2 text-m text-shadow flex justify-center text-rose-900">
+          <p className="my-4 text-m text-shadow flex justify-center text-rose-900">
 Showing 1 - {exercises.length}</p>
           {showLoadMore && (
             <button
-            className="w-1/2 px-4 py-2 bg-rose-500 text-white rounded-md block mx-auto hover:bg-rose-600 transition duration-300"
+            className="w-1/2 px-4 py-2 bg-rose-700 text-white rounded-md block mx-auto hover:bg-rose-600 transition duration-300"
             onClick={handleLoadMore}
             >
               Load More

@@ -29,12 +29,19 @@ const Listing = () => {
   }, [exerciseId]); 
 
   return (
-    <div className="bg-gray-100 p-8 rounded-lg shadow-2xl w-full text-s flex flex-col my-4 mx-auto sm:w-1/2">
-      {loading && <LoadingSpinner />}
+    <div className="bg-gradient-to-r from-rose-400 to-rose-600 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+        <div className="text-s flex flex-col items-center justify-center">
+        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-rose-500 text-white text-xl">
+          <i className="fa-solid fa-dumbbell"></i>
+        </div>
+        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-rose-100">Fitfolio</h2>
+        </div>
+        {loading && <LoadingSpinner />}
       {!loading && (
         <>
-        <Link>test</Link>
-        <section className="flex text-rose-900 flex-col-reverse sm:flex-row gap-4">
+ <button className="px-4 py-2 bg-rose-700 text-white rounded-md block  hover:bg-rose-600 transition duration-300">
+              <Link  to="/fitfolio">home</Link></button> 
+        <section className="flex flex-col-reverse sm:flex-row gap-4">
           <div className='m-2 sm:w-2/3 md:w-1/2'>
             <img className="rounded-lg shadow-lg align-center" src={data.gifUrl} alt={data.name} />
             <div className='py-8'>
@@ -79,7 +86,7 @@ const Listing = () => {
 
           <div className="p-4 text-s flex flex-col-reverse sm sm:mt-0 sm:w-1/2 md:w-2/3">
             <div className="exercise-card">
-              <div className="bg-gradient-to-r from-rose-400 via-rose-500 to-rose-300 bg-clip-text">
+              <div className="bg-gradient-to-r from-rose-100 via-rose-300 to-rose-200 bg-clip-text">
                 <h1 className="p-4 h1 text-4xl uppercase text-shadow flex justify-end text-transparent text-right">{data.name}</h1>
               </div>
               {data.instructions.map((line, i) => <li key={i}>{line}</li>)}

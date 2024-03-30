@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import TestimonialsSection from '../Components/WebsiteComponents/TestimonialsSection';
+import Coaching from "../Components/WebsiteComponents/Coaching"
+import Contact from '../Components/WebsiteComponents/Contact';
 
 const Home = () => {
 
     const [homeData, sethomeData] = useState([]);
   
     useEffect(() => {
-      // Construct the Sanity API URL
-      const PROJECT_ID = 'e8ckavtm'; // Replace with your Sanity project ID
-      const DATASET = 'production'; // Replace with your dataset name
+      const PROJECT_ID = 'e8ckavtm'; 
+      const DATASET = 'production'; 
   
-      const QUERY = '*[title == "Home"]';
+      const QUERY = '*[_type == "content"]';
       const PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
       
       // Make the HTTP request
@@ -36,37 +37,47 @@ const Home = () => {
 
   return (
     <>
-    <div className="mx-auto my-10 md:w-3/4">
-  <section className="flex text-indigo-900 flex-col sm:flex-row">
-  <div className='m-2 sm:w-2/3 md:w-1/2 object-cover'>
-  <img className="border rounded-lg shadow-lg" src="/assets/ash-1.jpg" alt="Ally Personal Trainer" />
-</div>
 
-
-      <div className="p-4 text-s -mt-16 flex flex-col sm:-ml-40 sm:mt-0 sm:w-1/2 md:w-2/3">
-        <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
-          <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right ">Hi, I'm Ally..</h1>
+{homeData.length > 0 && (
+  <div className="flex justify-center">
+    <div className="my-8 md:w-3/4 text-indigo-900">
+      <section className="flex flex-col lg:flex-row">
+        <div className="flex h-96 lg:h-screen lg:w-1/2 lg:pr-4">
+          <img className="w-full object-cover object-top border-0 rounded-lg shadow-lg" src="/assets/ally-1.jpg" alt="Ally Personal Trainer" />
         </div>
-        
-       <div className="p-4 text-sm md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
-       {homeData.map(entry => (
-  entry.body.map((block, index) => (
-    <p className="p-2" key={index}>
-      {block.children.map((child) => child.text).join(' ')}
-    </p>
-  ))
-))}
 
-
-</div>
-
+        <div className="flex lg:w-1/2 lg:pl-4 flex-col">
+          <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">
+            <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right">Hi, I'm Ally..</h1>
+          </div>
+          
+          <div className="p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+            {homeData[0].body.map((block, blockIndex) => (
+              <div key={blockIndex}>
+                <p className="p-2">{block.children.map((child) => child.text).join(' ')}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+            {homeData[1].body.map((block, blockIndex) => (
+              <div key={blockIndex}>
+                <p className="p-2">{block.children.map((child) => child.text).join(' ')}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+  </div>
+)}
 
-    </section>
-        
 
-    </div>
+
+    <Coaching />
     <TestimonialsSection />
+    <Contact />
+  
     </>
   )
 }

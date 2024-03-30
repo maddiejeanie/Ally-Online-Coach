@@ -49,7 +49,11 @@ const IndvBlogPost = () => {
     // Handle the case when no matching post is found
     return <div>Blog post not found</div>;
   }
-
+  
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
+   };
+   
   return (
     <>
     <div className="w-full md:w-2/3 p-4 text-sm md:text-base mx-auto justify-center text-indigo-400 m-4">
@@ -124,7 +128,7 @@ const IndvBlogPost = () => {
         <div className="flex justify-center">
 
         <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
-        <button className="text-white bg-indigo-400 h1 px-2 mt-4 hover:bg-white hover:text-indigo-400 transition delay-200 border-2 border-indigo-400 rounded-md text-lg uppercase font-bold">Read More</button></Link>
+        <button onClick={handleNavClick}  className="text-white bg-indigo-400 h1 px-2 mt-4 hover:bg-white hover:text-indigo-400 transition delay-200 border-2 border-indigo-400 rounded-md text-lg uppercase font-bold">Read More</button></Link>
 
         </div>
       </div>

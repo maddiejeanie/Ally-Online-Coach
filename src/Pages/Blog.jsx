@@ -61,6 +61,9 @@ const Blog = () => {
     return <div>{truncatedText + ellipsis}</div>;
   }
   
+  const handleNavClick = () => {
+   window.scrollTo(0, 0);
+  };
   
 
   return (
@@ -68,7 +71,7 @@ const Blog = () => {
       <div className="w-full md:w-2/3 p-4 text-sm md:text-base mx-auto justify-center text-indigo-400 m-4">
         <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">
           <h1 className="p-4 h1 text-6xl uppercase flex justify-start text-transparent text-left">
-            Thoughts from Ash..
+            Thoughts from Ally..
           </h1>
         </div>
 
@@ -86,12 +89,12 @@ const Blog = () => {
                 className='rounded-md border-0 w-full h-60 object-cover'
                 alt={blogPost.title}
               />
-              <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}><h2 className="py-2 h1 text-lg">{blogPost.title}</h2></Link>
+              <Link onClick={handleNavClick} to={`/blog/${blogPost.slug.current}`} state={{ blogData }}><h2 className="py-2 h1 text-lg">{blogPost.title}</h2></Link>
               <div className="text-indigo-900">
               {renderBodyContent(blogPost.body)}
             </div>
             <div className="flex justify-center">
-            <Link to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
+            <Link onClick={handleNavClick} to={`/blog/${blogPost.slug.current}`} state={{ blogData }}>
                 <button className="text-white bg-indigo-400 h1 px-2 mt-4 hover:bg-white hover:text-indigo-400 transition delay-200 border-2 border-indigo-400 rounded-md text-lg uppercase font-bold">Read More</button></Link>
                 </div>
 
