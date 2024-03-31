@@ -76,20 +76,33 @@ const StartChat = ({ selectedTrainer, goBack }) => {
 
             <main className="flex-1 flex flex-col justify-between overflow-y-auto">
                 <div className="flex flex-col p-4">
-                    {messages.map((message, index) =>
-                        message.role !== "system" && (
-                            <div
-                                key={index}
-                                className={`p-2 rounded-2xl my-2 ${
-                                    message.role === "user"
-                                        ? " bg-green-700 text-white self-end rounded-br-none"
-                                        : " bg-gray-300 text-green-800 self-start rounded-bl-none"
-                                }`}
-                            >
-                                {message.content}
-                            </div>
-                        )
-                    )}
+                {messages.map((message, index) => (
+    message.role !== "system" && (
+        <div
+            key={index}
+            className={`p-2 rounded-2xl my-2 ${
+                message.role === "user"
+                    ? " bg-green-700 text-white self-end rounded-br-none"
+                    : "self-start"
+            }`}
+        >
+            {message.role !== "user" && (
+                <div className="flex items-end">
+                    <img
+                        className="h-16 w-16 rounded-full object-cover "
+                        src={selectedTrainer.image}
+                        alt={selectedTrainer.name}
+                    />
+                    <div className="ml-4  bg-gray-300 text-green-800 self-start rounded-bl-none p-2 rounded-2xl ">{message.content}</div>
+                </div>
+            )}
+            {message.role === "user" && <p>{message.content}</p>}
+        </div>
+    )
+))}
+
+
+
                     {!hidePrompts && (
                         <div className="flex flex-col self-end w-4/5">
                             {ChatPrompts.map(
@@ -122,7 +135,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
                         placeholder="Type your message..."
                     />
                     <button
-                        className="ml-2 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-teal-700"
+                        className="ml-2 w-1/4 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-teal-700"
                         onClick={initiateChat}
                     >
                         Send
