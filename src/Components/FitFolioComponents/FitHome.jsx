@@ -9,7 +9,7 @@ const FitHome = () => {
   const CategoryButton = ({ categoryName, icon }) => (
     <Link to={`/fitfolio/category/${categoryName.toLowerCase()}`} className="w-full">
       
-      <div className="bg-white rounded-md overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 text-rose-800">
+      <div className="bg-white rounded-md overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 text-rose-500">
             <div className="h-32 bg-gray-200 flex items-center justify-center">
             <i className={`text-3xl fa-solid fa-${icon} mr-2`}></i>
             </div>
@@ -33,7 +33,7 @@ const FitHome = () => {
           Welcome to FitFolio – your ultimate fitness companion! 🏋️‍♂️ Explore diverse workouts categorized by body part, equipment, target muscles, using <strong>FitnessAPI</strong>. Enjoy a user-friendly interface for a seamless fitness experience. Stay fit anytime, anywhere. Let's make every workout count! 💪
         </p>
         <div className="my-4 w-2/3">
-        <h2 className="h2 text-xl uppercase text-shadow flex justify-center text-rose-200">Search by Category</h2>
+        <h2 className="h2 text-xl uppercase text-shadow flex justify-center text-rose-100">Search by Category</h2>
 
           <div className="flex gap-4 py-4 items-center justify-center">
             <CategoryButton categoryName="target" icon="bullseye" />

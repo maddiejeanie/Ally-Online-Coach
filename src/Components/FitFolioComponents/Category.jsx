@@ -26,12 +26,13 @@ const Category = () => {
   }, [categoryName]);
 
   return (
-    <div className="bg-gradient-to-r from-rose-400 to-rose-600 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-      <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-white text-rose-500 text-xl">
-        <i className="fa-solid fa-dumbbell"></i>
-      </div>
-      <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-white">FitFolio</h2>
-      <h3 className="m-8 h3 text-xl uppercase text-shadow flex justify-center text-white">Search by {categoryName}</h3>
+    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+    <div className="text-s flex flex-col items-center justify-center mx-auto">
+        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-rose-800 text-white text-xl">
+          <i className="fa-solid fa-dumbbell"></i>
+        </div>
+        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-rose-100">Fitfolio</h2>
+      <h3 className="m-8 h3 text-xl uppercase text-shadow flex justify-center text-white">Select Exercises by {categoryName}</h3>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-stretch">
         {categories.map((subcategory, index) => (
           <li key={index} className="relative">
@@ -48,6 +49,7 @@ const Category = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
