@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [hamNavOpen, setHamNavOpen] = useState(false);
+  const [hamNavOpen, setHamNavOpen] = useState(true);
 
   const toggleHamNav = () => {
     setHamNavOpen((prevHamNavOpen) => !prevHamNavOpen);
@@ -46,10 +46,10 @@ const Navbar = () => {
           </button>
         </Link>
 
-        <div className={`md:hidden flex items-center space-between pr-4 text-2xl text-indigo-50 ${hamNavOpen ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+        <div className={`md:hidden flex items-center space-between pr-4 text-2xl text-indigo-500 ${hamNavOpen ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
           {hamNavOpen ?
-            <i className="fa-solid fa-bars hover:text-blue-500 transition delay-200 hover:cursor-pointer" onClick={toggleHamNav}></i> :
-            <i className="fa-solid fa-xmark hover:text-blue-500 transition delay-200 hover:cursor-pointer" onClick={toggleHamNav}></i>
+            <i className="fa-solid fa-bars hover:text-indigo-50 transition delay-200 hover:cursor-pointer" onClick={toggleHamNav}></i> :
+            <i className="fa-solid fa-xmark hover:text-indigo-50 transition delay-200 hover:cursor-pointer" onClick={toggleHamNav}></i>
           }
         </div>
       </div>

@@ -16,12 +16,14 @@ Introducing MotivateMe, your AI personal trainer and motivator! Simply request s
 
       <h2 className="m-8 h2 text-xl uppercase text-shadow flex justify-center text-teal-100">Select Your Trainer</h2>
 
-<div className="flex flex-col gap-4 w-2/3">
+<div className="flex flex-col gap-8 sm:w-2/3">
   {TrainerData.map((trainer) => (
     <div
       key={trainer.name}
       onClick={() => handleClick(trainer)}
-      className={`border-0 rounded-lg shadow-lg bg-emerald-400 flex flex-row items-center justify-around text-white cursor-pointer 
+      className={`border-0 rounded-lg shadow-lg bg-emerald-400 flex flex-col sm:flex-row
+      items-center
+      justify-around text-white cursor-pointer 
       hover:scale-105 transition-transform duration-300`}
     >
       <div className="p-4 flex flex-col w-1/2 items-center">
@@ -34,7 +36,7 @@ Introducing MotivateMe, your AI personal trainer and motivator! Simply request s
       </div>
       
       {selectedTrainer === trainer && (
-        <div className=" bg-emerald-600 rounded-r-lg p-4 w-1/2 flex flex-col self-stretch">
+        <div className=" bg-emerald-600 rounded-b-lg sm:rounded-r-lg p-4 sm:w-1/2 flex flex-row sm:flex-col justify-center self-stretch">
           <div className="float-left">
             <i className="fa-solid fa-quote-left text-2xl px-4 text-teal-300"></i>
             <p className="text-left text-white">{trainer.catchphrase}</p>

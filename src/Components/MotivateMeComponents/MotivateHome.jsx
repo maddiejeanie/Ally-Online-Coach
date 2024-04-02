@@ -12,12 +12,11 @@ const MotivateHome = () => {
       
 
     return (
-        <div className="flex flex-col items-center bg-gradient-to-r from-teal-500 to-teal-700
-        p-8 rounded-lg shadow-2xl w-full text-s text-white my-4 mx-auto sm:w-3/4 lg:w-1/2">
-        <div className="h1 flex justify-center items-center w-10 h-10 border-0 rounded-full bg-teal-800 text-white text-xl">
-          <i className="fa-solid fa-dumbbell"></i>
-        </div>
-    <h2 className="my-8 h2 text-3xl uppercase text-shadow flex text-teal-100">MotivateMe</h2>
+<div className="bg-gradient-to-r from-teal-500 to-teal-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+  <div className="h1 flex justify-center items-center w-10 h-10 border-0 rounded-full bg-teal-800 text-white text-xl">
+    <i className="fa-solid fa-dumbbell"></i>
+  </div>
+  <h2 className="my-8 h2 text-3xl uppercase text-shadow flex text-teal-100">MotivateMe</h2>
         {showTrainer ? (
                 <SelectTrainer onTrainerSelected={(trainer) => {
                     setSelectedTrainer(trainer);
