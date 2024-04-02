@@ -10,7 +10,7 @@ const Contact = () => {
 
         <div className="w-full p-4 mt-2 text-s items-center justify-center mx-auto text-indigo-900">
           <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">
-            <h1 className="h1 text-6xl uppercase text-shadow flex justify-end text-transparent">Start your journey..</h1>
+            <h1 className="h1 text-5xl uppercase text-shadow flex justify-end text-transparent">Start your journey..</h1>
           </div>
           
           <form action="https://getform.io/f/3d45e44f-c964-4deb-8055-0933fa59eb9a" method="POST">

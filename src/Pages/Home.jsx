@@ -48,7 +48,7 @@ const Home = () => {
 
         <div className="flex lg:w-1/2 lg:pl-4 flex-col">
           <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">
-            <h1 className="p-4 h1 text-6xl uppercase text-shadow flex justify-end text-transparent text-right">Hi, I'm Ally..</h1>
+            <h1 className="p-4 h1 text-5xl uppercase text-shadow flex justify-end text-transparent text-right">Hi, I'm Ally..</h1>
           </div>
           
           <div className="p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">

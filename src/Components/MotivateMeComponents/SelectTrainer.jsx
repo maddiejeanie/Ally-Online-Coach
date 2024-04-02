@@ -11,7 +11,7 @@ const handleClick = (trainer) => {
 return (
   <>
   
-  <p className="my-4 w-2/3 text-justify">
+  <p className="my-4 md:w-2/3 text-justify">
 Introducing MotivateMe, your AI personal trainer and motivator! Simply request some motivation, and choose from three different personalities to guide and inspire you! Let's get motivated! 💪🤖</p>
 
       <h2 className="m-8 h2 text-xl uppercase text-shadow flex justify-center text-teal-100">Select Your Trainer</h2>

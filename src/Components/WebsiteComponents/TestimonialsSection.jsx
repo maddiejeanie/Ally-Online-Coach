@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
 
         <div className="w-full sm:w-3/4 p-4 text-sm md:text-base mx-auto text-indigo-400">
           <div className=" bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text ">
-          <h1 className="my-4 h1 text-6xl uppercase text-shadow flex text-transparent">Happy Clients</h1>
+          <h1 className="my-4 h1 text-5xl uppercase text-shadow flex text-transparent">Happy Clients</h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
   {testimonialData.map((testimonial, index) => (
