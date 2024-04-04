@@ -29,10 +29,10 @@ import { useNavigate } from 'react-router-dom'
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#667EEA", // Indigo-300
+      main: "#48BBFF", 
     },
     secondary: {
-      main: "#3B82F6", // Indigo-500
+      main: "#3B82F6", 
     },
     background: {
       default: "rgb(224, 231, 255)", // Set the default background color
@@ -135,17 +135,22 @@ const backToDashboard = () => {
   );
 
   return (
-    <div className="text-s flex flex-col items-center justify-center my-4 mx-auto sm:w-1/2">
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+<div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-sky-300 text-sky-100 text-
+xl">
+        <i className="fa-solid fa-dumbbell"></i>
+      </div>
+      <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">Client Checkin</h2>
 
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
         {formVisible && (
           <form onSubmit={handleSubmit}>
-            <Grid container rowSpacing={4} style={{ marginBottom: "1rem" }}>
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
-                Body Stats and Sleep
-              </h2>
+            <Grid container rowSpacing={2}>
+            <p className="mt-4 leading-loose text-xl uppercase text-shadow flex justify-center text-sky-100 font-semibold tracking-wide">
+                              Body Stats and Sleep
+              </p>
 
               {generateGridItem(
                 <>
@@ -242,9 +247,9 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow flex justify-center text-sky-100 font-semibold tracking-wide">
                 Stress and Energy
-              </h2>
+              </p>
 
               {generateGridItem(
                 <>
@@ -346,9 +351,9 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow flex justify-center text-sky-100 font-semibold tracking-wide">
                 Nutrition and Training
-              </h2>
+              </p>
 
               {generateGridItem(
                 <>
@@ -488,9 +493,9 @@ const backToDashboard = () => {
                 </>
               )}
 
-              <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow flex justify-center text-sky-100 font-semibold tracking-wide">
                 Social Interaction, Goals and Reflection
-              </h2>
+              </p>
 
               {generateGridItem(
                 <>
@@ -570,47 +575,27 @@ const backToDashboard = () => {
                 </>
               )}
 
-<Button
+<button
   type="submit"
-  style={{
-    marginTop: "1rem",
-    width: "100%",
-    padding: "0.5rem 1rem",
-    fontSize: "1rem",
-    borderRadius: "0.25rem",
-    backgroundColor: "#4F46E5", // Indigo-500
-    color: "#FFFFFF",
-    border: "1px solid #4338CA",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    cursor: "pointer",
-    transition: "background-color 0.3s ease-in-out",
-    outline: "none",
-  }}
-  onMouseOver={(e) => {
-    e.target.style.backgroundColor = "rgb(129, 140, 248)"; // Indigo-400
-  }}
-  onMouseOut={(e) => {
-    e.target.style.backgroundColor = "rgb(79, 70, 229)"; // Indigo-500
-  }}
+  className="my-4 mx-auto px-6 py-3 rounded-lg shadow-lg bg-white text-sky-700 font-semibold transition-colors duration-300 hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2"
+
 >
   Submit your check-in
-</Button>
+</button>
 
             </Grid>
           </form>
         )}
 
-        {successMessage &&  <div className="bg-gray-100 p-4 rounded-lg shadow-2xl w-full">
+        {successMessage &&  <div>
               <div className="text-s text-center my-4">
-                <strong>Form submitted!</strong>
+                <strong>Form submitted! Nice work.</strong>
               </div>
 
               <button
   type="button"
   onClick={backToDashboard}
-  className="w-full px-4 py-2 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
->
-                Back to the Dashboard
+  className="my-4 mx-auto px-6 py-3 rounded-lg shadow-lg bg-white text-sky-700 font-semibold transition-colors duration-300 hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">                Back to the Dashboard
             </button>
             </div>
 }

@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'
 
 const PostDataDisplay = ({ postDataList }) => {
   return (
-    <div className="text-s flex flex-col justify-center my-4 mx-auto sm:w-1/2">
-      {postDataList.map((postData) => (
-        <div className="bg-gray-100 p-8 rounded-lg shadow-2xl my-4" key={postData.id}>
-          <h2 className="mt-8 h2 text-3xl justify-center uppercase text-shadow flex text-sky-700">
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-sky-900 flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+<div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-sky-300 text-sky-100 text-
+xl">
+        <i className="fa-solid fa-dumbbell"></i>
+      </div>
+      <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">Client Checkin</h2>      {postDataList.map((postData) => (
+        <div className="bg-sky-100 p-4 rounded-lg shadow-2xl" key={postData.id}>
+          <p className="mt-4 text-2xl uppercase font-semibold tracking-wide text-sky-700">
             {new Date(postData.submissionTime).toLocaleDateString('en-US', {
               weekday: 'long',
               day: 'numeric',
@@ -14,32 +18,32 @@ const PostDataDisplay = ({ postDataList }) => {
               year: 'numeric',
             })}
 
-          </h2>
+          </p>
 
-          <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex text-sky-500">
+          <p className="leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Body Stats and Sleep</strong>
-          </h2>
+          </p>
           <p><strong>Checkin Weight:</strong> {postData.CheckinWeight} kg</p>
           <p><strong>Sleep Quality Rating:</strong> {postData.SleepQualityRating}</p>
           <p><strong>Hours of Sleep:</strong> {postData.HoursOfSleep} hours</p>
 
-          <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex text-sky-500">
+          <p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Stress and Energy</strong>
-          </h2>
+          </p>
           <p><strong>Stress Levels:</strong> {postData.StressLevels}</p>
           <p><strong>Training Compliance:</strong> {postData.TrainingCompliance}</p>
           <p><strong>Training Intensity:</strong> {postData.TrainingIntensity}</p>
           <p><strong>Training Progressions:</strong> {postData.TrainingProgressions}</p>
 
-          <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex text-sky-500">
+          <p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Nutrition and Training</strong>
-          </h2>
+          </p>
           <p><strong>Nutrition Compliance:</strong> {postData.NutritionCompliance}</p>
           <p><strong>Step Target:</strong> {postData.StepTarget} steps</p>
 
-          <h2 className="mt-8 h2 text-l uppercase text-shadow flex text-sky-500">
+          <p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Low Energy Factors</strong>
-          </h2>
+          </p>
           {postData.lowEnergyFactors && (
             <ul>
               {Object.entries(postData.lowEnergyFactors).map(([factor, value]) => (
@@ -48,9 +52,9 @@ const PostDataDisplay = ({ postDataList }) => {
             </ul>
           )}
 
-          <h2 className="mt-8 h2 text-l uppercase text-shadow flex text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Nutrition Challenges</strong>
-          </h2>
+          </p>
           {postData.nutritionChallenges && (
             <ul>
               {Object.entries(postData.nutritionChallenges).map(([challenge, value]) => (
@@ -59,9 +63,9 @@ const PostDataDisplay = ({ postDataList }) => {
             </ul>
           )}
 
-          <h2 className="mt-8 h2 text-l uppercase text-shadow flex text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Sleep Factors</strong>
-          </h2>
+          </p>
           {postData.sleepFactors && (
             <ul>
               {Object.entries(postData.sleepFactors).map(([factor, value]) => (
@@ -70,9 +74,9 @@ const PostDataDisplay = ({ postDataList }) => {
             </ul>
           )}
 
-          <h2 className="mt-8 h2 text-l uppercase text-shadow flex text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Stress Factors</strong>
-          </h2>
+          </p>
           {postData.stressFactors && (
             <ul>
               {Object.entries(postData.stressFactors).map(([factor, value]) => (
@@ -81,9 +85,9 @@ const PostDataDisplay = ({ postDataList }) => {
             </ul>
           )}
 
-          <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex text-sky-500">
+<p className="mt-4 leading-loose text-xl uppercase text-shadow text-sky-500 font-semibold tracking-wide">
             <strong>Social Interaction, Goals, and Reflection</strong>
-          </h2>
+          </p>
           <p><strong>Social Interaction:</strong> {postData.SocialInteraction ? 'Yes' : 'No'}</p>
           <p><strong>Gratitude List:</strong> {postData.Gratitude}</p>
           <p><strong>Week Rating:</strong> {postData.WeekRating}</p>
@@ -92,23 +96,21 @@ const PostDataDisplay = ({ postDataList }) => {
 
         </div>
       ))}
-        <div className="bg-gray-100 p-8 rounded-lg shadow-2xl my-8">
-  <div className="flex flex-col items-center space-y-6">
+  <div className="flex flex-row gap-4 items-center w-full justify-center">
     <Link
       to="/clients"
-      className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 px-4 py-3 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200 transition duration-300 ease-in-out text-center"
+      className="w-1/2 my-2 text-center px-4 py-2 rounded-lg bg-sky-100 text-sky-700 transition-colors duration-300 hover:bg-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
     >
-      Back to Dashboard
+      &lt; Back to Dashboard
     </Link>
 
     <Link
       to="/clients/posts/new"
-      className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 px-4 py-3 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200 transition duration-300 ease-in-out text-center"
+      className=" w-1/2 my-2 text-center px-4 py-2 rounded-lg bg-sky-100 text-sky-700 transition-colors duration-300 hover:bg-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
     >
-      Create Check-in
+      Create Check-in &gt; 
     </Link>
   </div>
-</div>
 
     </div>
     

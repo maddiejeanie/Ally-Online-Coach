@@ -38,8 +38,10 @@ const Category = () => {
           <li key={index} className="relative">
             <Link to={`/fitfolio/category/${categoryName.toLowerCase()}/${subcategory.toLowerCase().replace(/ /g, '-')}`}>
               <div className=" bg-white rounded-md overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 flex flex-col h-full">
-                <div className="h-32 bg-gray-200 flex items-center justify-center">
-                  <span className="text-4xl text-rose-500">🏋️‍♀️</span>
+                <div className="h-32  bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center">
+                  
+                {<i className={`text-5xl fa-solid fa-${categoryName === "target" ? "bullseye" : categoryName === "equipment" ? "bicycle" : "person-running"} text-orange-200`}></i>}
+
                 </div>
                 <div className="p-4 text-center">
                   <h4 className="text-lg font-semibold text-rose-500">{subcategory}</h4>

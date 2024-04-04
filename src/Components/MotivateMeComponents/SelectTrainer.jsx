@@ -12,9 +12,10 @@ return (
   <>
   
   <p className="my-4 md:w-2/3 text-justify">
-Introducing MotivateMe, your AI personal trainer and motivator! Simply request some motivation, and choose from three different personalities to guide and inspire you! Let's get motivated! 💪🤖</p>
 
-      <h2 className="m-8 h2 text-xl uppercase text-shadow flex justify-center text-teal-100">Select Your Trainer</h2>
+  Introducing MotivateMe, the innovative AI-powered personal trainer and motivator! Harnessing the cutting-edge <strong>OpenAI API</strong>, MotivateMe offers a revolutionary approach to fitness inspiration. With just a simple request, you can access a diverse array of motivational insights tailored to your preferences. Select from three distinct AI personalities, each equipped to guide and empower you on your fitness journey. Let's ignite your motivation and achieve greatness together! 💪🤖</p>
+  <h2 className="h2 text-3xl uppercase text-shadow flex justify-center text-teal-100 font-bold tracking-wide my-4">
+        Select Your Trainer</h2>
 
 <div className="flex flex-col gap-8 sm:w-2/3">
   {TrainerData.map((trainer) => (
@@ -36,7 +37,7 @@ Introducing MotivateMe, your AI personal trainer and motivator! Simply request s
       </div>
       
       {selectedTrainer === trainer && (
-        <div className=" bg-emerald-600 rounded-b-lg sm:rounded-r-lg p-4 sm:w-1/2 flex flex-row sm:flex-col justify-center self-stretch">
+        <div className=" bg-emerald-600 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none p-4 sm:w-1/2 flex flex-row sm:flex-col justify-center self-stretch">
           <div className="float-left">
             <i className="fa-solid fa-quote-left text-2xl px-4 text-teal-300"></i>
             <p className="text-left text-white">{trainer.catchphrase}</p>

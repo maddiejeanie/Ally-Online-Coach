@@ -40,63 +40,98 @@ const Listing = () => {
       {!loading && (
         <>
          <button
-            className="m-2 px-4 py-2 bg-rose-700 text-lg font-semibold text-white rounded-md  hover:bg-rose-600 transition duration-300">
+            className="m-2 px-4 py-2 bg-rose-700 text-lg font-semibold text-white rounded-md  hover:bg-rose-600 transition duration-300 tracking-wide">
               <Link  to="/fitfolio">HOME</Link></button> 
-        <section className="flex flex-col-reverse items-center sm:flex-row gap-4">
-          
-          <div className='m-2 sm:w-2/3 md:w-1/2 '>
-            <img className="rounded-lg shadow-lg w-full" src={data.gifUrl} alt={data.name} />
-            <div className='py-8'>
 
-            <p>
-  The {data.name} exercises the{' '}
-  <Link to={`${urlbasis}/bodypart/${encodeURIComponent(data.bodyPart.replace(/ /g, '-'))}`} className="font-bold">
-    {data.bodyPart}
-  </Link> using{' '}
-  <Link to={`${urlbasis}/equipment/${encodeURIComponent(data.equipment.replace(/ /g, '-'))}`} className="font-bold">
-    {data.equipment}
-  </Link>, targeting your{' '}
-  <Link to={`${urlbasis}/target/${encodeURIComponent(data.target.replace(/ /g, '-'))}`} className="font-bold">
-    {data.target}
-  </Link> and the{' '}
-  {data.secondaryMuscles && data.secondaryMuscles.length > 0 ? (
-  <>
-    {data.secondaryMuscles.slice(0, -1).map((muscle, index) => (
-      <span key={index}>
-        <Link to={`${urlbasis}/target/${encodeURIComponent(muscle.replace(/ /g, '-'))}`} className="font-bold">
-          {muscle}
-        </Link>
-        {index < data.secondaryMuscles.length - 2 && ', '}
-      </span>
-    ))}
-    {' '}
-    and{' '}
-    <Link to={`${urlbasis}/target/${encodeURIComponent(data.secondaryMuscles[data.secondaryMuscles.length - 1].replace(/ /g, '-'))}`} className="font-bold">
-      {data.secondaryMuscles[data.secondaryMuscles.length - 1]}
-    </Link>
-  </>
-) : (
-  <span className="font-bold">None</span>
-)}
+              <section className="flex flex-col-reverse items-center sm:flex-row  bg-rose-50 rounded-lg shadow-lg">
+  <div className="sm:w-2/3 md:w-1/2 bg-gradient-to-r from-orange-500 to-red-500 rounded-b-lg sm:rounded-br-none  self-stretch relative">
+    <img
+      className="sm:rounded-tl-lg shadow-lg w-full h-auto"
+      src={data.gifUrl}
+      alt={data.name}
+    />
+    <div className="px-2 py-4 leading-loose wrap">
+      The {data.name} exercises the{" "}
+      <Link
+        to={`${urlbasis}/bodypart/${encodeURIComponent(
+          data.bodyPart.replace(/ /g, "-")
+        )}`}
+        className="whitespace-nowrap uppercase bg-rose-700 text-white m-1 px-2 py-1 rounded-lg text-sm text-center my-2 hover:bg-rose-600 transition duration-300"
+      >
+        {data.bodyPart}
+      </Link>
+      using{" "}
+      <Link
+        to={`${urlbasis}/equipment/${encodeURIComponent(
+          data.equipment.replace(/ /g, "-")
+        )}`}
+        className=" whitespace-nowrap uppercase bg-rose-700 text-white m-1 px-2 py-1 rounded-lg text-sm text-center my-2 hover:bg-rose-600 transition duration-300"
+      >
+        {data.equipment}
+      </Link>
+      , targeting your{" "}
+      <Link
+        to={`${urlbasis}/target/${encodeURIComponent(
+          data.target.replace(/ /g, "-")
+        )}`}
+        className="whitespace-nowrap uppercase bg-rose-700 text-white m-1 px-2 py-1 rounded-lg text-sm text-center my-2 hover:bg-rose-600 transition duration-300"
+      >
+        {data.target}
+      </Link>
+      and the{" "}
+      {data.secondaryMuscles && data.secondaryMuscles.length > 0 ? (
+        <>
+          {data.secondaryMuscles.slice(0, -1).map((muscle, index) => (
+            <span key={index}>
+              <Link
+                to={`${urlbasis}/target/${encodeURIComponent(
+                  muscle.replace(/ /g, "-")
+                )}`}
+                className=" whitespace-nowrap uppercase bg-rose-700 text-white m-1 px-2 py-1 rounded-lg text-sm text-center my-2 hover:bg-rose-600 transition duration-300"
+              >
+                {muscle}
+              </Link>
+              {index < data.secondaryMuscles.length - 2 && ", "}
+            </span>
+          ))}
+          {" "}
+          and{" "}
+          <Link
+            to={`${urlbasis}/target/${encodeURIComponent(
+              data.secondaryMuscles[data.secondaryMuscles.length - 1].replace(
+                / /g,
+                "-"
+              )
+            )}`}
+            className="whitespace-nowrap uppercase bg-rose-700 text-white m-1 px-2 py-1 rounded-lg text-sm text-center my-2 hover:bg-rose-600 transition duration-300"
+          >
+            {data.secondaryMuscles[data.secondaryMuscles.length - 1]}
+          </Link>
+        </>
+      ) : (
+        <span className="font-bold">None</span>
+      )}
+    </div>
+  </div>
+  <div className="p-4 text-sm mx-4 text-rose-700 flex flex-col sm:mt-0 sm:w-1/2 md:w-2/3">
+    <div className="exercise-card">
+    <div className="mb-4">
 
-  .
-</p>
+    <h1 className="text-4xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">
+      How to: {data.name}
+    </h1>
+  </div>
+</div>
+<ol className="list-decimal list-inside py-4">
+  {data.instructions.map((line, i) => (
+    <li key={i} className="my-2">
+      {line}
+    </li>
+  ))}
+</ol>
+    </div>
 
-
-            </div>
-          </div>
-
-          <div className="p-4 text-s flex flex-col-reverse sm sm:mt-0 sm:w-1/2 md:w-2/3">
-            <div className="exercise-card">
-              <div className="bg-gradient-to-r from-rose-100 via-rose-300 to-rose-200 bg-clip-text">
-                <h1 className="p-4 h1 text-4xl uppercase text-shadow flex justify-end text-transparent text-right">{data.name}</h1>
-              </div>
-              {data.instructions.map((line, i) => <li key={i}>{line}</li>)}
-              <ul className="py-4">
-              </ul>
-            </div>
-          </div>
-        </section>
+</section>
       <section>
       <h3 className="my-8 h3 text-xl uppercase text-shadow text-rose-100">
         Related {data.target} Exercises

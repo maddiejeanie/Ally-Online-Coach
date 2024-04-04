@@ -44,15 +44,22 @@ const SearchResults = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-rose-400 to-rose-600 p-4 rounded-lg shadow-2xl w-full text-s text-white flex flex-col
+    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-4 rounded-lg shadow-2xl w-full text-s text-white flex flex-col
      justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
+
+<div className="text-s flex flex-col items-center justify-center mx-auto">
+        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-rose-800 text-white text-xl">
+          <i className="fa-solid fa-dumbbell"></i>
+        </div>
+        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-rose-100">Fitfolio</h2>
+        </div>
      
       {loading && <LoadingSpinner />}
       {exercises && (
         <>
-          <h3 className="m-4 h3 text-xl uppercase text-shadow flex justify-center text-rose-100">
+          <h2 className="m-4 h2 text-2xl uppercase text-shadow flex justify-center text-rose-100 tracking-wide">
             {subcategory && subcategory.replace("-", " ")} Exercises
-          </h3>
+          </h2>
 
            <Breadcrumbs />
           <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 items-stretch">
@@ -63,7 +70,7 @@ const SearchResults = () => {
             ))}
           </section>
 
-          <p className="my-4 text-m text-shadow flex justify-center text-rose-900">
+          <p className="my-4 text-m text-shadow flex justify-center text-white">
 Showing 1 - {exercises.length}</p>
           {showLoadMore && (
             <button
