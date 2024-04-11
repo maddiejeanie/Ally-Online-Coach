@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const PostDataDisplay = ({ postDataList }) => {
+
+
   return (
 <div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-sky-900 flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
 <div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-sky-300 text-sky-100 text-
@@ -9,7 +11,8 @@ xl">
         <i className="fa-solid fa-dumbbell"></i>
       </div>
       <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">Client Checkin</h2>      {postDataList.map((postData) => (
-        <div className="bg-sky-100 p-4 rounded-lg shadow-2xl" key={postData.id}>
+        
+        <div className="w-full my-4 bg-sky-100 p-4 rounded-lg shadow-2xl" key={postData.submissionTime}>
           <p className="mt-4 text-2xl uppercase font-semibold tracking-wide text-sky-700">
             {new Date(postData.submissionTime).toLocaleDateString('en-US', {
               weekday: 'long',

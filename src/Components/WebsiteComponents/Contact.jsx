@@ -5,7 +5,7 @@ const Contact = () => {
     <div className='mt-8 mx-auto lg:w-3/4'>
       <div className="flex flex-col md:flex-row">
         <div className="sm:w-1/2 p-4 text-sm md:text-base flex flex-col text-indigo-900">
-          <img src="/public/assets/ally-2.jpg" alt="Contact Form Ally Personal Trainer" className="object-cover shadow-lg rounded-lg mx-auto mt-4 h-3/4" />
+          <img src="/assets/ally-2.jpg" alt="Contact Form Ally Personal Trainer" className="object-cover shadow-lg rounded-lg mx-auto mt-4 h-3/4" />
         </div>
 
         <div className="w-full p-4 mt-2 text-s items-center justify-center mx-auto text-indigo-900">

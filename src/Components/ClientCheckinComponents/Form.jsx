@@ -89,7 +89,7 @@ const Form = () => {
     };
   
     // Get a reference to the "forms" node in your database
-    const formsRef = ref(database, "forms");
+    const formsRef = ref(database, `forms/${user.uid}`);
   
     // Push the form data to the database
     push(formsRef, formDataWithTimestamp);

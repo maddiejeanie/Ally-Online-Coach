@@ -7,50 +7,41 @@ import { Link } from 'react-router-dom';
 const Posts = () => {
   const [postDataList, setPostDataList] = useState([]);
   const [error, setError] = useState(null);
-  const [userId, setUserId] = useState(null);
+  const auth = getAuth();
 
   useEffect(() => {
-    const database = getDatabase();
-    const auth = getAuth();
-    const postsRef = ref(database, 'forms');
-
     const fetchData = async () => {
       try {
-        console.log("Fetching data...");
-        const snapshot = await get(postsRef);
-        const data = snapshot.val();
-
-        if (data) {
-          const formIds = Object.keys(data);
-          const forms = formIds.map((formId) => ({
-            id: formId,
-            ...data[formId],
-          }));
-
-          const currentUser = auth.currentUser;
-
-          if (currentUser) {
-            setUserId(currentUser.uid);
-
-            const filteredForms = forms.filter((form) => form.userId === currentUser.uid);
-
-            setPostDataList(filteredForms);
+        if (auth.currentUser) {
+          const database = getDatabase();
+          const userId = auth.currentUser.uid;
+          const userFormsRef = ref(database, `forms/${userId}`);
+    
+          const userFormsSnapshot = await get(userFormsRef);
+          const userFormsData = userFormsSnapshot.val();
+    
+          if (userFormsData) {
+            const postDataList = [];
+            for (const formId in userFormsData) {
+              const formRef = ref(database, `forms/${userId}/${formId}`);
+              const formSnapshot = await get(formRef);
+              const formData = formSnapshot.val();
+              if (formData) {
+                postDataList.push(formData);
+              }
+            }
+            setPostDataList(postDataList);
           } else {
-            console.log("No user signed in.");
-            setError('No user signed in.');
-            setUserId(null);
+            setError('No valid form data found');
           }
         } else {
-          console.log("No valid form data found");
-          setError('No valid form data found');
-          setPostDataList([]);
+          setError('User not authenticated');
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
         setError(error.message);
       }
     };
-
+    
     fetchData();
   }, []);
 
