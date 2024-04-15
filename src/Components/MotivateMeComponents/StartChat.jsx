@@ -61,7 +61,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-[700px] bg-gray-100 mt-8">
+        <div className="w-full flex flex-col h-[700px] bg-gray-100 mt-8">
             <header className="flex items-center justify-between px-4 py-2 bg-gradient-to-t from-green-700 to-green-900 text-white">
                 <button onClick={goBack} className="hover:bg-green-900 rounded px-2 py-1">
                     <span className="mr-2">◄</span>

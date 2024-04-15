@@ -58,7 +58,7 @@ const IndvBlogPost = () => {
     <>
     <div className="w-full md:w-2/3 p-4 text-sm md:text-base mx-auto justify-center text-indigo-400 m-4">
       <div className="bg-gradient-to-r from-indigo-400 via-purple-500 to-blue-300 bg-clip-text">
-        <h1 className="p-4 h1 text-6xl uppercase flex justify-start text-transparent text-left">
+        <h1 className="p-4 h1 text-5xl uppercase flex justify-start text-transparent text-left">
           {matchingPost.title}
         </h1>
       </div>

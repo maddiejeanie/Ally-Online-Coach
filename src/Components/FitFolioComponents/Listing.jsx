@@ -10,9 +10,24 @@ const Listing = () => {
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [relatedData, setRelatedData] = useState({});
 
   const endpoint = `/exercise/${exerciseId}`;
   const urlbasis = `/fitfolio/category`
+
+  const fetchRelatedData = async (target, bodyPart, equipment) => {
+    try {
+      const [targetData, bodyPartData, equipmentData] = await Promise.all([
+        fetchData(`/fitfolio/category/target/${encodeURIComponent(target.replace(/ /g, "-"))}`, options),
+        fetchData(`/fitfolio/category/bodypart/${encodeURIComponent(bodyPart.replace(/ /g, "-"))}`, options),
+        fetchData(`/fitfolio/category/equipment/${encodeURIComponent(equipment.replace(/ /g, "-"))}`, options),
+      ]);
+  
+      return { targetData, bodyPartData, equipmentData };
+    } catch (error) {
+      console.error('Error fetching related data:', error);
+    }
+  };
 
   useEffect(() => {
     const fetchDataAndSetExercise = async () => {
@@ -20,13 +35,21 @@ const Listing = () => {
         const fetchedData = await fetchData(endpoint, options);
         setData(fetchedData);
         setLoading(false);
+  
+        const relatedData = await fetchRelatedData(
+          fetchedData.target,
+          fetchedData.bodyPart,
+          fetchedData.equipment
+        );
+  
+        setRelatedData(relatedData);
       } catch (error) {
         console.error('Error fetching exercise data:', error);
       }
     };
-
+  
     fetchDataAndSetExercise();
-  }, [exerciseId]); 
+  }, [exerciseId]);
 
   return (
     <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 rounded-lg shadow-2xl w-full text-s text-white my-4 mx-auto sm:w-3/4 lg:w-1/2">
@@ -136,15 +159,15 @@ const Listing = () => {
       <h3 className="my-8 h3 text-xl uppercase text-shadow text-rose-100">
         Related {data.target} Exercises
         </h3>
-        <Related lengthWanted={3} categoryName={"target"} subcategory={data.target} />
+        <Related lengthWanted={3} data={relatedData.targetData} categoryName={"target"} subcategory={data.target} />
         <h3 className="my-8 h3 text-xl uppercase text-shadow text-rose-100">
         Related {data.bodyPart} Exercises
         </h3>
-        <Related lengthWanted={3} categoryName={"bodypart"} subcategory={data.bodyPart}/>
+        <Related lengthWanted={3}   data={relatedData.bodyPartData} categoryName={"bodypart"} subcategory={data.bodyPart}/>
         <h3 className="my-8 h3 text-xl uppercase text-shadow  text-rose-100">
         Related {data.equipment} Exercises
         </h3>
-        <Related lengthWanted={3} categoryName={"equipment"} subcategory={data.equipment}/>
+        <Related lengthWanted={3}   data={relatedData.equipmentData} categoryName={"equipment"} subcategory={data.equipment}/>
        
       </section>
       </>

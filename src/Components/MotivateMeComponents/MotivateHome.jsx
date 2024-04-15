@@ -13,7 +13,7 @@ const MotivateHome = () => {
 
     return (
 <div className="bg-gradient-to-r from-teal-500 to-teal-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-  <div className="text-s flex flex-col items-center justify-center mx-auto">
+  <div className="text-s flex flex-col items-center justify-center mx-auto sm:w-2/3">
   <div className="h1 flex items-center justify-center w-16 h-16 border-0 rounded-full bg-teal-700 text-teal-100 text-4xl">
     <i className="fa-solid fa-dumbbell"></i>
   </div>
