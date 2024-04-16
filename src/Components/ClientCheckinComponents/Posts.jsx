@@ -3,6 +3,7 @@ import { getDatabase, ref, get } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import PostDataDisplay from './PostDataDisplay';
 import { Link } from 'react-router-dom';
+import SubSiteHeader from '../WebsiteComponents/SubSiteHeader';
 
 const Posts = () => {
   const [postDataList, setPostDataList] = useState([]);
@@ -50,13 +51,8 @@ const Posts = () => {
       {postDataList.length > 0 ? (
         <PostDataDisplay postDataList={postDataList} />
       ) : (
-        <div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-          <div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-sky-300 text-sky-100 text-xl">
-            <i className="fa-solid fa-dumbbell"></i>
-          </div>
-          <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">
-            Client Checkin
-          </h2>
+        <div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+        <SubSiteHeader name={location.pathname}/>
           {error && <p className="text-white bg-red-500 p-2">Error: {error}</p>}
           <Link
             to="/clients/posts/new"

@@ -25,6 +25,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useAuth } from "./AuthContext.jsx"
 import { getDatabase, ref, push, serverTimestamp} from "firebase/database";
 import { useNavigate } from 'react-router-dom'
+import SubSiteHeader from "../WebsiteComponents/SubSiteHeader.jsx";
 
 const theme = createTheme({
   palette: {
@@ -123,24 +124,20 @@ const Form = () => {
   const navigate = useNavigate();
 
 const backToDashboard = () => {
- navigate('/clients/dashboard')
+ navigate('/clientcheckin/dashboard')
 }
   
   const generateGridItem = (children) => (
     <Grid item xs={12}>
-      <Paper elevation={4} style={{ padding: "20px", backgroundColor: "#f7fafc" }}>
+      <Paper elevation={4} style={{ padding: "10px", backgroundColor: "#f7fafc" }}>
         {children}
       </Paper>
     </Grid>
   );
 
   return (
-<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-<div className="h1 flex items-center justify-center w-10 h-10 border-0 rounded-full bg-sky-300 text-sky-100 text-
-xl">
-        <i className="fa-solid fa-dumbbell"></i>
-      </div>
-      <h2 className="m-8 h2 text-3xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">Client Checkin</h2>
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg sm:w-3/4 lg:w-1/2">
+    <SubSiteHeader name={location.pathname}/>
 
     <ThemeProvider theme={theme}>
       <CssBaseline />

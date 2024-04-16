@@ -27,10 +27,10 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="clients" element={<ClientCheckin />} />
-      <Route path="clients/dashboard" element={<Dashboard />} />
-      <Route path="clients/posts/new" element={<Form />} />
-      <Route path="clients/posts" element={<Posts />} />
+      <Route path="clientcheckin" element={<ClientCheckin />} />
+      <Route path="clientcheckin/dashboard" element={<Dashboard />} />
+      <Route path="clientcheckin/posts/new" element={<Form />} />
+      <Route path="clientcheckin/posts" element={<Posts />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<IndvBlogPost />} />
       <Route path="fitfolio" element={<FitHome />} />

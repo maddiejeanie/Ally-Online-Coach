@@ -7,6 +7,19 @@ const Navbar = () => {
     setHamNavOpen((prevHamNavOpen) => !prevHamNavOpen);
   };
 
+  const getNavbarColorScheme = () => {
+    switch (location.pathname) {
+      case '/motivateme':
+        return 'bg-teal-500 text-teal-100';
+      case '/clientcheckin':
+        return 'bg-sky-500 text-sky-100';
+      case '/fitfolio':
+        return 'bg-rose-500 text-rose-100';
+      default:
+        return 'bg-indigo-700 text-indigo-100';
+    }
+  };
+
   const NavMenu = (
     <div className="h1 text-xl uppercase font-bold text-white w-full md:flex md:flex-row items-center">
       <div className="bg-indigo-800 md:bg-inherit">
@@ -20,7 +33,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="bg-indigo-600 md:bg-inherit">
-        <Link to="/clients" className="px-2 sm:hover:text-indigo-700 hover:text-indigo-100 transition delay-200">
+        <Link to="/clientcheckin" className="px-2 sm:hover:text-indigo-700 hover:text-indigo-100 transition delay-200">
           ClientCheckin
         </Link>
       </div>
@@ -76,7 +89,7 @@ const Navbar = () => {
         </div>
       </div>
       {!hamNavOpen && (
-        <div className="absolute left-0 right-0 bg-indigo-300 flex flex-col justify-center items-center text-center">
+        <div className="absolute left-0 right-0 bg-indigo-300 flex flex-col justify-center items-center text-center sm:hidden">
           {NavMenu}
         </div>
       )}

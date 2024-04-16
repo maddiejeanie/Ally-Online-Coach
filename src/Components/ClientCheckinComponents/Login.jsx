@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import SubSiteHeader from "../WebsiteComponents/SubSiteHeader";
 
 const LoginForm = () => {
   const auth = getAuth();
@@ -29,7 +30,7 @@ const LoginForm = () => {
       const userCredential = await signInWithEmailAndPassword(auth, loginData.email, loginData.password);
       const user = userCredential.user;
       // setUser(user); // If you need user state
-      navigate('/clients/dashboard');
+      navigate('/clientcheckin/dashboard');
     } catch (error) {
       setError(error.message);
     }
@@ -41,7 +42,7 @@ const LoginForm = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, loginData.email, loginData.password);
       const user = userCredential.user;
       // setUser(user); // If you need user state
-      navigate('/clients/dashboard');
+      navigate('/clientcheckin/dashboard');
     } catch (error) {
       setError(error.message);
     }
@@ -71,15 +72,8 @@ const LoginForm = () => {
   }
 
   return (
-<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 rounded-lg shadow-2xl w-full text-s text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-  <div className="text-s flex flex-col items-center justify-center mx-auto ">
-  <div className="h1 flex items-center justify-center w-16 h-16 border-0 rounded-full bg-sky-300 text-sky-100 text-4xl">
-
-      <i className="fa-solid fa-dumbbell"></i>
-    </div>
-    <h2 className="mt-8 h2 text-5xl uppercase text-shadow flex justify-center text-sky-100 font-bold tracking-wide">
-
-      Client Checkin</h2>
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+    <SubSiteHeader name={location.pathname}/>
 
 
       <p className="my-4 sm:w-2/3 text-justify text-white">
@@ -88,10 +82,10 @@ const LoginForm = () => {
         With <strong>Firestore's authentication</strong> and <strong>real-time database</strong>, effortlessly log your check-ins and track your fitness journey with your trainer. 
         Embrace convenience and log your Client Check-in today!
       </p>
-    </div>
+  
 
-    <form onSubmit={handleLogin} className="sm:w-2/3">
-    <h2 className="h2 text-3xl uppercase text-shadow flex justify-center text-teal-100 font-bold tracking-wide my-4">
+    <form onSubmit={handleLogin} className="sm:w-2/3 w-full">
+    <h2 className="h2 text-3xl uppercase text-shadow flex justify-center text-teal-100 font-bold tracking-wide my-4 ">
         Login</h2>
 
         <div className="mb-2">

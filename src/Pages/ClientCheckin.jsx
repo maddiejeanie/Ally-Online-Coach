@@ -10,7 +10,7 @@ const ClientCheckin = () => {
 
   useEffect(() => {
     if (user) {
-      navigate('/clients/dashboard'); 
+      navigate('/clientcheckin/dashboard'); 
     }
   }, [user]);
 

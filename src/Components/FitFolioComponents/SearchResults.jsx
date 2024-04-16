@@ -4,6 +4,7 @@ import PreviewCard from "./PreviewCard";
 import LoadingSpinner from "./LoadingSpinner";
 import { fetchData, options } from './fetchData';
 import Breadcrumbs from "./Breadcrumbs";
+import SubSiteHeader from "../WebsiteComponents/SubSiteHeader";
 
 const SearchResults = () => {
   const { categoryName, subcategory } = useParams();
@@ -59,13 +60,8 @@ const SearchResults = () => {
   }
 
   return (
-    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-4 rounded-lg shadow-2xl w-full text-s text-white flex flex-col justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-      <div className="text-s flex flex-col items-center justify-center mx-auto">
-        <div className="h1 flex items-center justify-center w-10 h-10 p-2 border-0 rounded-full bg-rose-800 text-white text-xl">
-          <i className="fa-solid fa-dumbbell"></i>
-        </div>
-        <h2 className="mt-8 h2 text-3xl uppercase text-shadow flex justify-end text-rose-100">Fitfolio</h2>
-      </div>
+    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+    <SubSiteHeader name={location.pathname}/>
       {loading && <LoadingSpinner />}
       {exercises && (
         <>

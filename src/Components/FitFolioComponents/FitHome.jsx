@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SubSiteHeader from "../WebsiteComponents/SubSiteHeader";
 
 const FitHome = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,14 +27,9 @@ const FitHome = () => {
   );
   
   return (
-    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 rounded-lg shadow-2xl w-full text-sm text-white flex flex-col items-center justify-center my-4 mx-auto sm:w-3/4 lg:w-1/2">
-      <div className=" flex flex-col items-center justify-center mx-auto">
-        <div className="h1 flex items-center justify-center w-16 h-16 border-0 rounded-full bg-rose-800 text-rose-100 text-4xl">
-          <i className="fa-solid fa-dumbbell"></i>
-        </div>
-        <h2 className="mt-8 h2 text-5xl uppercase text-shadow flex justify-center text-rose-100 font-bold tracking-wide">
-          Fitfolio
-        </h2>
+    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+    <SubSiteHeader name={location.pathname}/>
+
         <p className="my-8 md:text-lg md:w-2/3 text-justify leading-relaxed">
           Welcome to FitFolio – your ultimate fitness companion! 🏋️‍♂️ Explore
           diverse workouts categorized by body part, equipment, and target
@@ -41,7 +37,7 @@ const FitHome = () => {
           interface for a seamless fitness experience. Stay fit anytime, anywhere.
           Let's make every workout count! 💪
         </p>
-        <div className="my-8 w-2/3">
+        <div className="my-8 sm:w-2/3">
           <h2 className="h2 text-3xl uppercase text-shadow flex justify-center text-rose-100 font-bold tracking-wide">
             Search by Category
           </h2>
@@ -52,7 +48,7 @@ const FitHome = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
