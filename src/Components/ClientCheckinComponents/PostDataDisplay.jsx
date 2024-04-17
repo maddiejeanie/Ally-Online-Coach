@@ -5,7 +5,7 @@ const PostDataDisplay = ({ postDataList }) => {
 
 
   return (
-<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-black flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
     <SubSiteHeader name={location.pathname}/>
   {postDataList.map((postData) => (
         

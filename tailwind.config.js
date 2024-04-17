@@ -8,4 +8,12 @@ export default {
     extend: {},
   },
   plugins: [],
+  safelist: [
+    {
+        pattern: /(bg|text)-(teal|sky|rose|indigo)-(\d{1}0{1,2})/,
+        variants: [
+            "hover",
+        ],
+    },
+  ],
 }

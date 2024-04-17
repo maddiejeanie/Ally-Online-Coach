@@ -72,11 +72,11 @@ const LoginForm = () => {
   }
 
   return (
-<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+<div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col flex-1 items-center justify-center sm:my-4 sm:rounded-lg sm-items-center mx-auto sm:w-3/4 lg:w-1/2 ">
     <SubSiteHeader name={location.pathname}/>
 
 
-      <p className="my-4 sm:w-2/3 text-justify text-white">
+      <p className="my-4 w-full text-justify text-white">
         Introducing "Client Check-in" – your ultimate solution for hassle-free check-ins! 
         Say goodbye to trying to remember what information you need to share, or having your trainer remind you it's time to checkin!
         With <strong>Firestore's authentication</strong> and <strong>real-time database</strong>, effortlessly log your check-ins and track your fitness journey with your trainer. 
