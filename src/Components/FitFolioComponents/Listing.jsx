@@ -19,9 +19,9 @@ const Listing = () => {
   const fetchRelatedData = async (target, bodyPart, equipment) => {
     try {
       const [targetData, bodyPartData, equipmentData] = await Promise.all([
-        fetchData(`/fitfolio/category/target/${encodeURIComponent(target.replace(/ /g, "-"))}`, options),
-        fetchData(`/fitfolio/category/bodypart/${encodeURIComponent(bodyPart.replace(/ /g, "-"))}`, options),
-        fetchData(`/fitfolio/category/equipment/${encodeURIComponent(equipment.replace(/ /g, "-"))}`, options),
+        fetchData(`/target/${encodeURIComponent(target.replace(/ /g, " "))}`, options),
+        fetchData(`/bodyPart/${encodeURIComponent(bodyPart.replace(/ /g, " "))}`, options),
+        fetchData(`/equipment/${encodeURIComponent(equipment.replace(/ /g, " "))}`, options),
       ]);
   
       return { targetData, bodyPartData, equipmentData };
@@ -29,6 +29,7 @@ const Listing = () => {
       console.error('Error fetching related data:', error);
     }
   };
+  
 
   useEffect(() => {
     const fetchDataAndSetExercise = async () => {
@@ -59,7 +60,7 @@ const Listing = () => {
       {!loading && (
         <>
          <button
-            className="m-2 px-4 py-2 bg-rose-700 text-lg font-semibold text-white rounded-md  hover:bg-rose-600 transition duration-300 tracking-wide">
+            className="m-2 px-4 py-2 flex self-start bg-rose-700 text-lg font-semibold text-white rounded-md  hover:bg-rose-600 transition duration-300 tracking-wide">
               <Link  to="/fitfolio">HOME</Link></button> 
 
               <section className="flex flex-col-reverse items-center sm:flex-row  bg-rose-50 rounded-lg shadow-lg">

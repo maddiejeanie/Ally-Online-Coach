@@ -34,7 +34,6 @@ export const ColorSchemeProvider = ({ children }) => {
     const scheme = getColorScheme();
     const textColor = `text-${scheme}-${textShade}`;
     const className = sm ? `sm:${hover ? 'hover:' : ''}${textColor}` : `${hover ? 'hover:' : ''}${textColor}`;
-    console.log(className)
 
     return sm ? `sm:hover:${textColor}` : (hover ? `hover:${textColor}` : textColor);
   };

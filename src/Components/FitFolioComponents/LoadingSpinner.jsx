@@ -1,4 +1,3 @@
-// Your React component
 
 import React from 'react';
 

@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import PreviewCard  from './PreviewCard';
+
 const Related = ({ data, lengthWanted, categoryName, subcategory }) => {
   return (
     <div>

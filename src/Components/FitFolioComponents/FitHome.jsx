@@ -27,7 +27,7 @@ const FitHome = () => {
   );
   
   return (
-    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+    <div className="bg-gradient-to-r from-rose-500 to-rose-700 p-8 shadow-2xl w-full text-s text-white flex flex-col flex-1 items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
     <SubSiteHeader name={location.pathname}/>
 
         <p className="my-8 md:text-lg  text-justify leading-relaxed">

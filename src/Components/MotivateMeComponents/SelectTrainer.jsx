@@ -13,9 +13,7 @@ const SelectTrainer = ({ onTrainerSelected }) => {
       <p className="my-4 text-justify">
         Introducing MotivateMe, the innovative AI-powered personal trainer and
         motivator! Harnessing the cutting-edge <strong>OpenAI API</strong>,
-        MotivateMe offers a revolutionary approach to fitness inspiration. With
-        just a simple request, you can access a diverse array of motivational
-        insights tailored to your preferences. Select from three distinct AI
+        MotivateMe offers a revolutionary approach to fitness inspiration. Select from three distinct AI
         personalities, each equipped to guide and empower you on your fitness
         journey. Let's ignite your motivation and achieve greatness together!
         💪🤖
@@ -51,7 +49,7 @@ const SelectTrainer = ({ onTrainerSelected }) => {
          <div className="text-left flex flex-col w-1/3 items-center">
           <p className="my-2">{selectedTrainer.name} says</p>
          <img
-              className="h-26 w-26 rounded-full object-cover "
+              className="h-20 w-20 rounded-full object-cover "
               src={selectedTrainer.image}
               alt={selectedTrainer.name} />
               </div>

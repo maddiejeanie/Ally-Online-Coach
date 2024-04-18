@@ -61,7 +61,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
     }, [messages]);
 
     return (
-        <div className="w-full flex flex-col h-[700px] bg-gray-100 mt-8">
+        <div className="w-full flex flex-col h-[600px] bg-gray-100 mt-8">
             <header className="flex items-center justify-between px-4 py-2 bg-gradient-to-t from-green-700 to-green-900 text-white">
                 <button onClick={goBack} className="hover:bg-green-900 rounded px-2 py-1">
                     <span className="mr-2">◄</span>
@@ -70,7 +70,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
                 <h2 className="text-xl font-semibold">{selectedTrainer.name}</h2>
                 <div className="relative">
                     <img
-                        className="h-24 w-24 rounded-full object-cover"
+                        className="h-20 w-20 rounded-full object-cover"
                         src={selectedTrainer.image}
                         alt={selectedTrainer.name}
                     />

@@ -42,7 +42,7 @@ const Home = () => {
   <div className="flex justify-center">
     <div className="my-8 md:w-3/4 text-indigo-900">
       <section className="flex flex-col lg:flex-row">
-        <div className="flex h-96 lg:h-screen lg:w-1/2 lg:pr-4">
+        <div className="flex flex-2 h-96 lg:h-screen lg:w-1/2 lg:pr-4">
           <img className="w-full object-cover object-top border-0 rounded-lg shadow-lg" src="/assets/ally-1.jpg" alt="Ally Personal Trainer" />
         </div>
 
@@ -51,7 +51,7 @@ const Home = () => {
             <h1 className="p-4 h1 text-5xl uppercase text-shadow flex justify-end text-transparent text-right">Hi, I'm Ally..</h1>
           </div>
           
-          <div className="p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+          <div className="flex flex-col flex-1 p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
             {homeData[0].body.map((block, blockIndex) => (
               <div key={blockIndex}>
                 <p className="p-2">{block.children.map((child) => child.text).join(' ')}</p>
@@ -59,7 +59,7 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+          <div className="flex flex-col flex-1 p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
             {homeData[1].body.map((block, blockIndex) => (
               <div key={blockIndex}>
                 <p className="p-2">{block.children.map((child) => child.text).join(' ')}</p>
