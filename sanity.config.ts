@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {Card, Text} from '@sanity/ui'
 import {DashboardIcon} from '@sanity/icons'
-import {schemaTypes} from './ally-pt/schemas'
+import { schemaTypes } from './sanity-settings/schemas'
 
 
 export default defineConfig({

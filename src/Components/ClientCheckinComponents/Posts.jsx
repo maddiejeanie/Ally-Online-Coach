@@ -47,13 +47,13 @@ const Posts = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {postDataList.length > 0 ? (
         <PostDataDisplay postDataList={postDataList} />
       ) : (
-        <div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
+        <div className="bg-gradient-to-r from-sky-500 to-sky-700 p-8 shadow-2xl w-full text-s text-white flex flex-col flex-1 items-center justify-center sm:my-4 sm:rounded-lg mx-auto sm:w-3/4 lg:w-1/2">
         <SubSiteHeader name={location.pathname}/>
-          {error && <p className="text-white bg-red-500 p-2">Error: {error}</p>}
+          {error && <p className="text-white bg-red-500 px-2 my-8">Error: {error}</p>}
           <Link
             to="/clients/posts/new"
             className="w-1/2 text-center px-4 py-2 my-4 border border-sky-500 text-sky-700 bg-sky-100 rounded-lg shadow-lg hover:bg-sky-200 focus:outline-none focus:bg-sky-200"
@@ -62,7 +62,7 @@ const Posts = () => {
           </Link>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
