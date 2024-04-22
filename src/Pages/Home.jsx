@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TestimonialsSection from '../Components/WebsiteComponents/TestimonialsSection';
 import Coaching from "../Components/WebsiteComponents/Coaching"
 import Contact from '../Components/WebsiteComponents/Contact';
-
+import SubsiteHeader from '../Components/WebsiteComponents/SubSiteHeader';
 const Home = () => {
 
     const [homeData, sethomeData] = useState([]);
@@ -52,6 +52,7 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col flex-1 p-4 m-4 md:text-base bg-indigo-200 bg-opacity-95 border-0 border-indigo-900 rounded-lg shadow-lg shadow-pop-br">
+            
             {homeData[0].body.map((block, blockIndex) => (
               <div key={blockIndex}>
                 <p className="p-2">{block.children.map((child) => child.text).join(' ')}</p>
