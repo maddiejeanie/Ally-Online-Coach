@@ -10,7 +10,7 @@ const StartChat = ({ selectedTrainer, goBack }) => {
     const [messages, setMessages] = useState([
         {
             "role": "system",
-            "content": `you are a chatbot designed to assist a personal trainers clients with their motivation to follow the trainers guides on nutrition and fitness, The user has chosen you to embody ${selectedTrainer.name} who has a style of ${selectedTrainer.promptNotesforTrainer.style} and her answers feature that she ${selectedTrainer.promptNotesforTrainer.features}. Give concise, one or two sentence responses. `
+            "content": `you are a chatbot designed to assist a personal trainers clients with their motivation to follow the trainers guides on nutrition and fitness, The user has chosen you to embody ${selectedTrainer.name} who has a style of ${selectedTrainer.promptNotesforTrainer.style} and her answers feature that she ${selectedTrainer.promptNotesforTrainer.features}. Give concise and specific, one or two sentence responses. `
         },
     ]);
 
