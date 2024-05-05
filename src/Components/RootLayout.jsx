@@ -20,7 +20,7 @@ const OutletWithBackground = () => {
   const { getNavbarColorSchemeBg } = useColorScheme();
 
   return (
-    <main className={`flex-1 ${getNavbarColorSchemeBg(100)} sm:py-2 flex flex-col`}>
+    <main>
       <Outlet />
     </main>
   );

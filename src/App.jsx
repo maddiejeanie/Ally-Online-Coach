@@ -38,8 +38,7 @@ const router = createBrowserRouter(
       <Route path="fitfolio/category/:categoryName" element={<Category />} />
       <Route path="fitfolio/category/:categoryName/:subcategory" element={<SearchResults />} />
       <Route path="fitfolio/exercise/:exerciseId" element={<Listing />} />
-      <Route path="/motivateme" element={<MotivateHome />} />
-
+      <Route path="motivateme" element={<MotivateHome />} />
     </Route>
   )
 );
@@ -47,10 +46,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <React.StrictMode>
-
-      <RouterProvider router={router}>
-
-      </RouterProvider>
+      <RouterProvider router={router} />
     </React.StrictMode>
   );
 }
